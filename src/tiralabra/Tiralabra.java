@@ -15,7 +15,13 @@ public class Tiralabra {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+         int[][] map1 = new int[70][70];
+         map1[0] = MapHelper.initArray(map1);
+         
+
+    
         // TODO code application logic here
     }
-    
+
 }
