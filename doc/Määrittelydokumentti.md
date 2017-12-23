@@ -18,6 +18,6 @@ Naiivin ratkaisun jälkeen on tarkoitus etsiä mielekkäämpiä ratkaisuvaihtoeh
 
 #### Toteutussuunnitelma ja aikavaativuus
 
-Verkon G' konstruoinnissa on tarkoitus käyttää Floyd-Warshallin algoritmia ja TSP:n ratkaisussa jotain tyypillistä, vielä valitsematonta, branch-and-bound -tyyppistä algoritmia. Lisäksi lienee parasta tallentaa verkko G' vierusmatriisina, sillä verkossa G' on kaari kaikkien solmujen välillä.
+Verkon G' konstruoinnissa on tarkoitus käyttää [Floyd-Warshallin algoritmia](https://en.wikipedia.org/wiki/Floyd–Warshall_algorithm) ja TSP:n ratkaisussa jotain tyypillistä, vielä valitsematonta, [branch-and-bound](https://en.wikipedia.org/wiki/Branch_and_bound) -tyyppistä algoritmia. Lisäksi lienee parasta tallentaa verkko G' vierusmatriisina, sillä verkossa G' on kaari kaikkien solmujen välillä.
 
 Ensimmäisen ratkaisuversion aikavaativuus O(|S|!), koska TSP:n ratkaisu on kokonaisongelman vaikein askel.
