@@ -12,7 +12,7 @@ Ohjelma saa syötteenään 30-100 solmusta koostuvan suuntaamattoman verkon G, j
 
 Ongelmana on löytää verkon G lyhin polku annetusta lähtösolmusta v lähtösolmuun siten, että polku kulkee annettuun solmujoukkoon S kuuluvien solmujen kautta. Toinen vaikeampi variaatio samasta ongelmasta on, että pitää löytää lyhin polku kahden annetun solmun välillä niin, että polku kulkee vähintään k:n annettuun solmujoukkoon kuuluvan solmun kautta. Tiedetään, että |S| verrattain on pieni.
 
-Aluksi on tarkoitus totetuttaa hyvin naiivi ratkaisu ensimmäisestä variaatiosta siten, että annetun verkon G ja merkitsevän solmujoukon S perusteella konstruoidaan sellainen uusi verkko G', joka koostuu vain merkitsevistä solmuista siten, että koko verkko on klikki. Uuden verkon konstruoinnin jälkeen jäljellä on TSP.
+Aluksi on tarkoitus totetuttaa hyvin naiivi ratkaisu ensimmäisestä variaatiosta siten, että annetun verkon G ja merkitsevän solmujoukon S perusteella konstruoidaan sellainen uusi verkko G', joka koostuu vain merkitsevistä solmuista siten, että koko verkko on klikki. Uuden verkon konstruoinnin jälkeen jäljellä on [TSP](https://en.wikipedia.org/wiki/Travelling_salesman_problem).
 
 Naiivin ratkaisun jälkeen on tarkoitus etsiä mielekkäämpiä ratkaisuvaihtoehtoja tai vaihtoehtoisesti yrittää hakea mielekästä ratkaisua ongelman toiseen variaatioon.
 
