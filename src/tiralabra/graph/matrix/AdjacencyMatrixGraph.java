@@ -13,5 +13,11 @@ import tiralabra.graph.Graph;
  */
 public class AdjacencyMatrixGraph implements Graph{
     
+    private final int[][] adjecencyMatrix;
+    
+    public AdjacencyMatrixGraph(int[][] matrix) {
+        this.adjecencyMatrix = matrix;
+    }
+    
     
 }
