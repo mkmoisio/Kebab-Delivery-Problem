@@ -12,4 +12,6 @@ Aluksi on tarkoitus totetuttaa hyvin naiivi ratkaisu ensimmäisestä variaatiost
 
 Naiivin ratkaisun jälkeen on tarkoitus etsiä mielekkäämpiä ratkaisuvaihtoehtoja tai vaihtoehtoisesti yrittää hakea mielekästä ratkaisua ongelman toiseen variaatioon.
 
+Verkon G' konstruoinnissa on tarkoitus käyttää Floyd-Warshallin algoritmia. Lisäksi aion tallentaa verkon G' vierusmatriisina, sillä verkossa G' on kaari kaikista solmuista kaikkin solmuihin.
+
 Ensimmäisen ratkaisuversion aikavaativuus O(|S|!), koska TSP:n ratkaisu on kokonaisongelman vaikein askel.
