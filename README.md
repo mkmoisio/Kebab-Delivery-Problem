@@ -1,4 +1,4 @@
-# Tiralabra-2017
+# Tiralabra-2017-Joulu
 
 [Määrittelydokumentti](https://github.com/mkmoisio/Tiralabra-2017/blob/master/doc/Määrittelydokumentti.md)
 
