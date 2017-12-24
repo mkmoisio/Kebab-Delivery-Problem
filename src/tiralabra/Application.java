@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tiralabra.graph;
+package tiralabra;
 
 /**
  *
  * @author mikkomo
  */
-public interface Graph {
-
-    Graph constructSignificantGraph(int[] significantVertice);
+public class Application {
     
-    int[][] getAdjacencyMatrix();
+    
+    void execute() {
+        
+    }
 }

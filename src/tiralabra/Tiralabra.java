@@ -12,6 +12,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import tiralabra.graph.Graph;
+import tiralabra.graph.matrix.AdjacencyMatrixGraph;
 import tiralabra.graph.utils.UtilityMethods;
 
 /**
@@ -22,17 +24,26 @@ public class Tiralabra {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         
-        int[][] map1 = new int[70][70];
         Path p = Paths.get("./helsinki.txt");
         
         List<String> contents = Files.readAllLines(p);
         
-        contents.forEach(System.out::println);
+        int[][] test = new int[][]{
+            {2, 3},
+            {4, 5}   
+        };
         
-        System.out.println(Arrays.deepToString(UtilityMethods.fromStringListToint2DArray(contents)));
+        System.out.println(Arrays.deepToString(test));
+        Graph G = new AdjacencyMatrixGraph(UtilityMethods.fromStringListToint2DArray(contents));
+        Graph G2 = G.constructSignificantGraph(new int[]{1, 2});
+        contents.forEach(System.out::println);
+        UtilityMethods.print2DArray(G2.getAdjacencyMatrix());
+        UtilityMethods.print2DArray(UtilityMethods.fromStringListToint2DArray(contents));
+    //    System.out.println(Arrays.deepToString(UtilityMethods.fromStringListToint2DArray(contents)));
     }
     
 }

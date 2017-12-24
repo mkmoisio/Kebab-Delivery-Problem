@@ -27,11 +27,9 @@ public class UtilityMethods {
             int[] tmp = new int[MAGIC_SEVENTY];
             Arrays.fill(tmp, -1);
             String[] tmpString = item.split(":");
-            int nodeNumber = Integer.parseInt(tmpString[0]);
-            
+            int nodeNumber = Integer.parseInt(tmpString[0]);    
             
             for (int i = 1; i < tmpString.length; i += 2) {
-                
                 
                 tmp[Integer.parseInt(tmpString[i])] = Integer.parseInt(tmpString[i + 1]);
             }
@@ -39,7 +37,18 @@ public class UtilityMethods {
             array2D[nodeNumber] = tmp;
 
         });
+        
+        for (int i = 0; i < MAGIC_SEVENTY; i++) {
+            array2D[i][i] = 0;
+        }
         return array2D;
+    }
+    
+    
+    public static void print2DArray(int[][] array2D) {
+        for (int i = 0; i < array2D[0].length; i++) {
+            System.out.println(Arrays.toString(array2D[i]));
+        }
     }
 
   
