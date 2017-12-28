@@ -6,6 +6,7 @@
 package tiralabra.graph.matrix;
 
 import tiralabra.graph.Graph;
+import tiralabra.graph.Node;
 
 /**
  *
@@ -14,22 +15,24 @@ import tiralabra.graph.Graph;
 public class AdjacencyMatrixGraph implements Graph {
 
     private final int[][] adjacencyMatrix;
+    private int[][] path;
 
     public AdjacencyMatrixGraph(int[][] matrix) {
         this.adjacencyMatrix = matrix;
     }
 
-    public AdjacencyMatrixGraph(int size) {
-        this.adjacencyMatrix = new int[size][size];
-    }
 
-    /**
-     *
-     * @param significantVertice
-     * @return
-     */
-    @Override
-    public Graph constructSignificantGraph(int[] significantVertice) {
+
+    public Node getShortestPath(int[] nodes) {
+        int[][] significant = this.constructSignificantGraph(nodes);
+        
+
+        return new Node("", 0, 0);
+    }
+    
+    
+
+    private int[][] constructSignificantGraph(int[] significantVertice) {
 
         int[][] dist = allShortestPathsBetweenTwoVerticesAsMatrix();
         int[][] sigMatrix = new int[significantVertice.length][significantVertice.length];
@@ -39,21 +42,24 @@ public class AdjacencyMatrixGraph implements Graph {
                 sigMatrix[i][j] = dist[significantVertice[i]][significantVertice[j]];
             }
         }
-
-        return new AdjacencyMatrixGraph(sigMatrix);
-
+        return sigMatrix;
     }
 
     /*
      F-W
      */
-    public int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
+    private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
         int[][] dist = this.clone2DArray(this.adjacencyMatrix);
-
+        this.path = new int[dist.length][dist.length];
         for (int k = 0; k < dist.length; k++) {
             for (int i = 0; i < dist.length; i++) {
                 for (int j = 0; j < dist.length; j++) {
+
+                    int before = dist[i][j];
                     dist[i][j] = this.minDist(dist[i][j], dist[i][k], dist[k][j]);
+                    if (dist[i][j] != before) {
+                        this.path[i][j] = dist[i][k];
+                    }
                 }
             }
         }
@@ -86,5 +92,4 @@ public class AdjacencyMatrixGraph implements Graph {
         return adjacencyMatrix;
     }
 
-    
 }

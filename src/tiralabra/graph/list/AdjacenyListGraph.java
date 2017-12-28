@@ -22,24 +22,13 @@ public class AdjacenyListGraph implements Graph {
 
     private Map<Integer, List<Integer>> map;
 
-    public AdjacenyListGraph(List<String> list) {
-        map = new HashMap();
-
-        list.forEach(item -> {
-            String[] tmpString = item.split(":");
-            int nodeNumber = Integer.parseInt(tmpString[0]);
-            List<Integer> tmpList = new ArrayList();
-            for (int i = 1; i < tmpString.length; i += 2) {
-
-                tmpList.add(Integer.parseInt(tmpString[i + 1]));
-            }
-
-            map.put(nodeNumber, tmpList);
-        });
-
+    public AdjacenyListGraph(int[][] matrix) {
+        
+        
+        
+            
     }
 
-    @Override
     public Graph constructSignificantGraph(int[] significantVertice) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

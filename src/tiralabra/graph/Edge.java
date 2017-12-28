@@ -9,9 +9,8 @@ package tiralabra.graph;
  *
  * @author mikkomo
  */
-public interface Graph {
-
-  //  Graph constructSignificantGraph(int[] significantVertice);
+public class Edge {
     
-    int[][] getAdjacencyMatrix();
+    
+    
 }

@@ -6,10 +6,13 @@
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/Tiralabra.java</file>
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/maps/Helsinki.java</file>
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/Graph.java</file>
-            <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/Node.java</file>
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/utils/UtilityMethods.java</file>
+            <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/Node.java</file>
+            <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/Application.java</file>
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/list/AdjacenyListGraph.java</file>
             <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/matrix/AdjacencyMatrixGraph.java</file>
+            <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/Edge.java</file>
+            <file>file:/Users/mikkomo/Documents/Tiralabra/src/tiralabra/graph/matrix/AdjacencyMatrixNodeGraph.java</file>
         </group>
     </open-files>
 </project-private>
