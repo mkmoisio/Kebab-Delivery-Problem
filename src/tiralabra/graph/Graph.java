@@ -13,5 +13,5 @@ public interface Graph {
 
   //  Graph constructSignificantGraph(int[] significantVertice);
     
-    int[][] getAdjacencyMatrix();
+  //  int[][] getAdjacencyMatrix();
 }

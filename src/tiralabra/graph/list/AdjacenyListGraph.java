@@ -23,17 +23,14 @@ public class AdjacenyListGraph implements Graph {
     private Map<Integer, List<Integer>> map;
 
     public AdjacenyListGraph(int[][] matrix) {
-        
-        
-        
-            
+
     }
 
     public Graph constructSignificantGraph(int[] significantVertice) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    //   @Override
     public int[][] getAdjacencyMatrix() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

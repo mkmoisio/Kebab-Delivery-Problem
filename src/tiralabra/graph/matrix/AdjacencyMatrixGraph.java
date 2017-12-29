@@ -5,8 +5,15 @@
  */
 package tiralabra.graph.matrix;
 
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Queue;
+import java.util.Set;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
+import tiralabra.graph.SetNode;
 
 /**
  *
@@ -21,16 +28,26 @@ public class AdjacencyMatrixGraph implements Graph {
         this.adjacencyMatrix = matrix;
     }
 
-
-
     public Node getShortestPath(int[] nodes) {
         int[][] significant = this.constructSignificantGraph(nodes);
-        
 
-        return new Node("", 0, 0);
+        return new Node(0);
     }
-    
-    
+
+    private void solveTSP(int[][] significant) {
+        int n = significant.length;
+        
+        List<SetNode> subsets = new ArrayList();
+        
+        subsets.add(new SetNode(1, 1, 0));
+        
+        for (int k = 1; k < n; n++) {   
+            
+        }
+     Set<Integer> S = new HashSet();
+        
+     
+    }
 
     private int[][] constructSignificantGraph(int[] significantVertice) {
 
@@ -39,6 +56,9 @@ public class AdjacencyMatrixGraph implements Graph {
 
         for (int i = 0; i < significantVertice.length; i++) {
             for (int j = 0; j < significantVertice.length; j++) {
+                if (i == j) {
+                    sigMatrix[i][j] = Integer.MAX_VALUE;
+                } else 
                 sigMatrix[i][j] = dist[significantVertice[i]][significantVertice[j]];
             }
         }
@@ -46,7 +66,8 @@ public class AdjacencyMatrixGraph implements Graph {
     }
 
     /*
-     F-W
+    Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
+    
      */
     private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
         int[][] dist = this.clone2DArray(this.adjacencyMatrix);
@@ -65,7 +86,9 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return dist;
     }
-
+    /*
+    Min(a, (b+c)), -1 = inf
+    */
     private int minDist(int a, int b, int c) {
         if (b < 0 || c < 0) {
             return a;
@@ -87,7 +110,7 @@ public class AdjacencyMatrixGraph implements Graph {
         return dst;
     }
 
-    @Override
+   // @Override
     public int[][] getAdjacencyMatrix() {
         return adjacencyMatrix;
     }
