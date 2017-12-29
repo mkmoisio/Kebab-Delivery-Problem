@@ -38,11 +38,8 @@ public class Tiralabra {
         
         System.out.println(Arrays.deepToString(test));
         Graph G = new AdjacencyMatrixGraph(UtilityMethods.fromStringListToint2DArray(contents));
-      //  Graph G2 = G.constructSignificantGraph(new int[]{1, 2});
         contents.forEach(System.out::println);
-      //  UtilityMethods.print2DArray(G2.getAdjacencyMatrix());
-        UtilityMethods.print2DArray(UtilityMethods.fromStringListToint2DArray(contents));
-    //    System.out.println(Arrays.deepToString(UtilityMethods.fromStringListToint2DArray(contents)));
+   
     }
     
 }

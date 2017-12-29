@@ -24,10 +24,20 @@ public class AdjacencyMatrixGraph implements Graph {
     private final int[][] adjacencyMatrix;
     private int[][] path;
 
+    /**
+     * 
+     * @param matrix
+     */
     public AdjacencyMatrixGraph(int[][] matrix) {
         this.adjacencyMatrix = matrix;
     }
 
+    /**
+     * Laskee mikä on tämän graafin sellainen lyhin polku, joka käy parametrina annotuissa solmuissa ja palaa lähtösolmuun.
+     * Lähtösolmu on parametrinä annettavan taulukon ensimmäinen alkio.
+     * @param nodes solmut joissa käyvä lyhin polku halutaan
+     * @return Polku solmuina
+     */
     public Node getShortestPath(int[] nodes) {
         int[][] significant = this.constructSignificantGraph(nodes);
 
@@ -36,17 +46,16 @@ public class AdjacencyMatrixGraph implements Graph {
 
     private void solveTSP(int[][] significant) {
         int n = significant.length;
-        
+
         List<SetNode> subsets = new ArrayList();
-        
+
         subsets.add(new SetNode(1, 1, 0));
-        
-        for (int k = 1; k < n; n++) {   
-            
+
+        for (int k = 1; k < n; n++) {
+
         }
-     Set<Integer> S = new HashSet();
-        
-     
+        Set<Integer> S = new HashSet();
+
     }
 
     private int[][] constructSignificantGraph(int[] significantVertice) {
@@ -58,16 +67,17 @@ public class AdjacencyMatrixGraph implements Graph {
             for (int j = 0; j < significantVertice.length; j++) {
                 if (i == j) {
                     sigMatrix[i][j] = Integer.MAX_VALUE;
-                } else 
-                sigMatrix[i][j] = dist[significantVertice[i]][significantVertice[j]];
+                } else {
+                    sigMatrix[i][j] = dist[significantVertice[i]][significantVertice[j]];
+                }
             }
         }
         return sigMatrix;
     }
 
     /*
-    Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
-    
+     Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
+     Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut konstruoida myöhemmin
      */
     private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
         int[][] dist = this.clone2DArray(this.adjacencyMatrix);
@@ -86,6 +96,7 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return dist;
     }
+    
     /*
     Min(a, (b+c)), -1 = inf
     */
@@ -110,9 +121,9 @@ public class AdjacencyMatrixGraph implements Graph {
         return dst;
     }
 
-   // @Override
-    public int[][] getAdjacencyMatrix() {
-        return adjacencyMatrix;
-    }
+    // @Override
+//    public int[][] getAdjacencyMatrix() {
+//        return adjacencyMatrix;
+//    }
 
 }

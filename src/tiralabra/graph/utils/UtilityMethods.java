@@ -14,8 +14,16 @@ import java.util.List;
  */
 public class UtilityMethods {
 
+    /**
+     * Palautetavan 2D taulukon koko. Voidaan poistaa kun saadaan verkko, jossa mikään solmunumero ei jää välistä.
+     */
     public static final int MAGIC_SEVENTY = 70;
 
+    /**
+     *
+     * @param list listaesitys verkosta
+     * @return verkon vierusmatriisiesitys
+     */
     public static int[][] fromStringListToint2DArray(List<String> list) {
         int[][] array2D = new int[MAGIC_SEVENTY][MAGIC_SEVENTY];
        
@@ -44,7 +52,10 @@ public class UtilityMethods {
         return array2D;
     }
     
-    
+    /**
+     * 2D-taulukon tulostus debuggaustarkoituksiin
+     * @param array2D
+     */
     public static void print2DArray(int[][] array2D) {
         for (int i = 0; i < array2D[0].length; i++) {
             System.out.println(Arrays.toString(array2D[i]));
