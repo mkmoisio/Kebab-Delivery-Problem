@@ -5,11 +5,9 @@
  */
 package tiralabra.graph.matrix;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Queue;
 import java.util.Set;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
@@ -25,7 +23,7 @@ public class AdjacencyMatrixGraph implements Graph {
     private int[][] path;
 
     /**
-     * 
+     * Luo graafin matriisiesityksen annetusta
      * @param matrix
      */
     public AdjacencyMatrixGraph(int[][] matrix) {
@@ -77,7 +75,7 @@ public class AdjacencyMatrixGraph implements Graph {
 
     /*
      Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
-     Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut konstruoida myöhemmin
+     Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut voidaan konstruoida myöhemmin
      */
     private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
         int[][] dist = this.clone2DArray(this.adjacencyMatrix);
@@ -98,7 +96,7 @@ public class AdjacencyMatrixGraph implements Graph {
     }
     
     /*
-    Min(a, (b+c)), -1 = inf
+    Min(a, (b+c)), negatiiviset arvot = inf
     */
     private int minDist(int a, int b, int c) {
         if (b < 0 || c < 0) {
