@@ -4,3 +4,4 @@ nbproject*
 .gradle
 gradle/wapper
 build/built-jar.properties
+.gradle/*
