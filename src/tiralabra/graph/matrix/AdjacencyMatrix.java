@@ -5,14 +5,7 @@
  */
 package tiralabra.graph.matrix;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import tiralabra.graph.Graph;
-import tiralabra.graph.Node;
-import tiralabra.graph.SetNode;
-import tiralabra.graph.utils.ArrayCopy;
 
 /**
  *

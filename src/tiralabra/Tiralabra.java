@@ -39,10 +39,10 @@ public class Tiralabra {
 //            {4, 5}   
 //        };
         // System.out.println(Arrays.deepToString(TestGraph.c));
-        Graph G = new AdjacencyMatrix(TestGraph.b);
+        Graph G = new AdjacencyMatrix(TestGraph.c);
         long l = System.currentTimeMillis();
         BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
-        Node n = BHK.solveTSPn(G);
+        Node n = BHK.solveTSPpath(G);
         System.out.println(System.currentTimeMillis() - l + " ms");
         System.out.println("Length of shortest path: " + n.getFullPathLen());
         System.out.println("The path: ");
@@ -50,7 +50,6 @@ public class Tiralabra {
             System.out.print(n.getValue() + " ");
             n = n.getNxt();
         }
-        System.out.println("0");
 //        contents.forEach(System.out::println);
 
     }

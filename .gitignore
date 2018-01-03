@@ -1,5 +1,6 @@
-build*
+build/*
 nbproject*
 /dist/
 .gradle
 gradle/wapper
+build/built-jar.properties

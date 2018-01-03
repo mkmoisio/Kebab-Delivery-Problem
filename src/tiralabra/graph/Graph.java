@@ -11,8 +11,9 @@ package tiralabra.graph;
  */
 public interface Graph {
 
+    int cost(int x, int y);
 
-     int cost(int x, int y);
-      int getNodeCount();
-       public int getSize();
+    int getNodeCount();
+
+    public int getSize();
 }

@@ -17,7 +17,7 @@ public class FloydWarshall {
     
     /**
      * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan palautettavan taulukon [i][j][0] tasoon.
-     * [i][j][1] tasoon tallennetaan lyhin polku.
+     * [i][j][1] tasoon tallennetaan lyhin polku.(KESKEN)
      * @param adjMatrix
      * @return 
      */
