@@ -11,10 +11,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import tiralabra.algorithm.BellmanHeldKarp;
+import tiralabra.algorithm.BellmanHeldKarpRecursion;
 import tiralabra.graph.Graph;
 import tiralabra.graph.maps.TestGraph;
-import tiralabra.graph.matrix.AdjacencyMatrixGraph;
+import tiralabra.graph.matrix.AdjacencyMatrix;
 import tiralabra.graph.utils.UtilityMethods;
 
 /**
@@ -39,8 +39,8 @@ public class Tiralabra {
 //        };
         
        // System.out.println(Arrays.deepToString(TestGraph.c));
-        Graph G = new AdjacencyMatrixGraph(TestGraph.c);
-        BellmanHeldKarp BHK = new BellmanHeldKarp();
+        Graph G = new AdjacencyMatrix(TestGraph.c);
+        BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
         System.out.println(BHK.solveTSP(G));
 //        contents.forEach(System.out::println);
    

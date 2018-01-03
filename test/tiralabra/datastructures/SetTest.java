@@ -62,10 +62,40 @@ public class SetTest {
         Set set2 = set.remove(1);
 
         assertEquals(set.getSize(), 3);
-        assertEquals(set2.getSize(), 3);
+        assertEquals(set2.getSize(), 2);
+        Set set3 = set2.remove(2);
+        assertEquals(set3.getSize(), 1);
 
     }
 
+    @Test
+    public void removeLastElement() {
+         System.out.println(set.toString());
+        set = set.remove(2);
+        System.out.println(set.toString());
+        set = set.remove(3);
+         System.out.println(set.toString());
+        set = set.remove(1);
+        assertEquals(set.getSize(), 0);
+        System.out.println(set.toString());
+
+    }
+
+    @Test
+    public void elementCanBeAdded() {
+        set.add(5);
+        assertEquals(set.getSize(), 4);
+        System.out.println(set.toString());
+    }
+
+    @Test
+    public void elementsCanBeAddedUntilFull() {
+        for (int j = 4; j < 14; j++) {
+            set.add(j);
+        }
+        
+        assertEquals(set.toString(), "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ");
+    }
     @After
     public void tearDown() {
     }

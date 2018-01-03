@@ -12,25 +12,28 @@ import java.util.Set;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 import tiralabra.graph.SetNode;
+import tiralabra.graph.utils.ArrayCopy;
 
 /**
  *
  * @author mikkomo
  */
-public class AdjacencyMatrixGraph implements Graph {
+public class AdjacencyMatrix implements Graph {
 
     private final int[][] adjacencyMatrix;
     private int[][] path;
-    private  int nodeCount;
+    private final int nodeCount;
+
     /**
-     * Luo graafin matriisiesityksen annetusta
+     *
      * @param matrix
      */
-    public AdjacencyMatrixGraph(int[][] matrix) {
+    public AdjacencyMatrix(int[][] matrix) {
         this.adjacencyMatrix = matrix;
         this.nodeCount = matrix.length;
     }
-    
+
+    @Override
     public int getSize() {
         return this.adjacencyMatrix.length;
     }
@@ -38,31 +41,6 @@ public class AdjacencyMatrixGraph implements Graph {
     @Override
     public int getNodeCount() {
         return this.nodeCount;
-    }
-    /**
-     * Laskee mikä on tämän graafin sellainen lyhin polku, joka käy parametrina annotuissa solmuissa ja palaa lähtösolmuun.
-     * Lähtösolmu on parametrinä annettavan taulukon ensimmäinen alkio.
-     * @param nodes solmut joissa käyvä lyhin polku halutaan
-     * @return Polku solmuina
-     */
-    public Node getShortestPath(int[] nodes) {
-        int[][] significant = this.constructSignificantGraph(nodes);
-
-        return new Node(0);
-    }
-
-    private void solveTSP(int[][] significant) {
-        int n = significant.length;
-
-        List<SetNode> subsets = new ArrayList();
-
-        subsets.add(new SetNode(1, 1, 0));
-
-        for (int k = 1; k < n; n++) {
-
-        }
-        Set<Integer> S = new HashSet();
-
     }
 
     private int[][] constructSignificantGraph(int[] significantVertice) {
@@ -87,7 +65,7 @@ public class AdjacencyMatrixGraph implements Graph {
      Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut voidaan konstruoida myöhemmin
      */
     private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
-        int[][] dist = this.clone2DArray(this.adjacencyMatrix);
+        int[][] dist = ArrayCopy.clone2DArray(this.adjacencyMatrix);
         this.path = new int[dist.length][dist.length];
         for (int k = 0; k < dist.length; k++) {
             for (int i = 0; i < dist.length; i++) {
@@ -103,10 +81,10 @@ public class AdjacencyMatrixGraph implements Graph {
         }
         return dist;
     }
-    
+
     /*
-    Min(a, (b+c)), negatiiviset arvot = inf
-    */
+     Min(a, (b+c)), negatiiviset arvot = +inf
+     */
     private int minDist(int a, int b, int c) {
         if (b < 0 || c < 0) {
             return a;
@@ -119,20 +97,10 @@ public class AdjacencyMatrixGraph implements Graph {
         return Math.min(a, b + c);
     }
 
-    private int[][] clone2DArray(int[][] src) {
-        int[][] dst = new int[src.length][src.length];
-
-        for (int i = 0; i < src.length; i++) {
-            System.arraycopy(src[i], 0, dst[i], 0, src.length);
-        }
-        return dst;
-    }
-
     // @Override
 //    public int[][] getAdjacencyMatrix() {
 //        return adjacencyMatrix;
 //    }
-
     @Override
     public int cost(int x, int y) {
         return this.adjacencyMatrix[x][y];

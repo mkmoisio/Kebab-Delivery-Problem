@@ -5,8 +5,6 @@
  */
 package tiralabra.graph;
 
-import java.util.Arrays;
-
 /**
  *
  * @author mikkomo
@@ -28,15 +26,13 @@ public class Set {
         this.array = array;
     }
 
-    //       System.arraycopy(vanha, 0, uusi, 0, vanha.length);
-
-    public Set add(int i) {
+    public void add(int i) {
         if (this.size == array.length) {
             this.inc();
         }
         this.array[size] = i;
         this.size++;
-        return this;
+     
     }
 
     private void inc() {
@@ -55,21 +51,26 @@ public class Set {
         return -1;
     }
 
-    public Set remove(int i) {
-        int[] tmp = new int[this.size];
-        int tmpSize = this.size;
-        System.arraycopy(this.array, 0, tmp, 0, this.size);
-
-        // TÄSSÄ VAIHEESSA TAULUKOT VIELÄ SAMAT JOTEN INDEX OSUU OIKEAAN KOHTAAN
+    private void justRemove(int i) {
         int index = this.getIndex(i);
-        if (index != -1) {
-            for (int j = index; j < this.size - 1; j++) {
-                tmp[j] = tmp[j + 1];
-            }
-            tmpSize--;
+        if (index == -1) {
+           throw new RuntimeException("Ei ole tarkoitus poistaa sellaisia alkoita, joita ei joukossa ole");
         }
-        return new Set(tmp, tmpSize);
+
+        for (int j = index; j < this.size - 1; j++) {
+            array[j] = array[j + 1];
+        }
+        this.size--;
     }
+
+    public Set remove(int i) {
+        
+        Set tmpSet = new Set(this.asArray(), this.size);
+        tmpSet.justRemove(i);
+
+        return tmpSet;
+    }
+    
 
     public int getSize() {
         return this.size;
@@ -80,14 +81,24 @@ public class Set {
     }
 
     public int[] asArray() {
-        int[] tmp = new int[this.size + INC_SIZE];
+        int[] tmp = new int[this.size];
         System.arraycopy(this.array, 0, tmp, 0, size);
         return tmp;
     }
-    
+
     @Override
     public String toString() {
-     return  Arrays.toString(this.array);
+        
+        if (this.size == 0) 
+            return "Empty set";
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < this.size; i++) {
+            sb.append(this.array[i]);
+            sb.append(", ");
+        }
+
+        return sb.toString();
     }
 
 }
