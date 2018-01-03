@@ -25,4 +25,10 @@ public class Maths {
 
         return Math.min(a, b + c);
     }
+    
+    public static int min(int a, int b) {
+        if (a < 0) return b;
+        if (b < 0) return a;
+        return Math.min(a, b);
+    }
 }

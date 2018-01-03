@@ -11,7 +11,7 @@ package tiralabra.graph;
  */
 public class Set {
 
-    private final int INC_SIZE = 10;
+    private  int INC_SIZE = 10;
     private final int INIT_SIZE = 10;
     private int[] array;
     private int size;
@@ -37,6 +37,7 @@ public class Set {
 
     private void inc() {
         int[] tmp = new int[this.array.length + INC_SIZE];
+        this.INC_SIZE = INC_SIZE * 2; //?? järkevää??
         System.arraycopy(this.array, 0, tmp, 0, this.array.length);
 
         this.array = tmp;

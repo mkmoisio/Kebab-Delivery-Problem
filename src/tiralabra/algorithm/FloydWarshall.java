@@ -14,6 +14,13 @@ import tiralabra.graph.utils.Maths;
  */
 public class FloydWarshall {
 
+    
+    /**
+     * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan palautettavan taulukon [i][j][0] tasoon.
+     * [i][j][1] tasoon tallennetaan lyhin polku.
+     * @param adjMatrix
+     * @return 
+     */
     public int[][][] allShortestPathsBetweenTwoVerticesAsMatrix(int[][] adjMatrix) {
 
         int[][][] dist = ArrayCopy.clone2DArrayTo3D(adjMatrix);

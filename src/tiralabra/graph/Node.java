@@ -13,16 +13,47 @@ import java.util.Set;
  */
 public class Node {
 
-    private Set<Node> parents;
-    private int value;
-
-    public Node() {
-        this(0);
-
-    }
+   private Node prv;
+   private Node nxt;
+   private int value;
+   private int fullPathLen;
 
     public Node(int value) {
         this.value = value;
     }
 
+    public Node getPrv() {
+        return prv;
+    }
+
+    public void setPrv(Node prv) {
+        this.prv = prv;
+    }
+
+    public Node getNxt() {
+        return nxt;
+    }
+
+    public void setNxt(Node nxt) {
+        this.nxt = nxt;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getFullPathLen() {
+        return fullPathLen;
+    }
+
+    public void setFullPathLen(int fullPathLen) {
+        this.fullPathLen = fullPathLen;
+    }
+
+    
+    
 }
