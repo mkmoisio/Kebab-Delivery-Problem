@@ -9,8 +9,13 @@ package tiralabra.graph.maps;
  *
  * @author mikkomo
  */
-public class Helsinki {
+public class TestGraph {
 
-  
-    
+    public static int[][] c = new int[][]{
+        {0, 2, 9, 10},
+        {1, 0, 6, 4},
+        {15, 7, 0, 8},
+        {6, 3, 12, 0}
+    };
+
 }

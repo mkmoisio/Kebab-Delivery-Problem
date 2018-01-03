@@ -11,7 +11,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import tiralabra.algorithm.BellmanHeldKarp;
 import tiralabra.graph.Graph;
+import tiralabra.graph.maps.TestGraph;
 import tiralabra.graph.matrix.AdjacencyMatrixGraph;
 import tiralabra.graph.utils.UtilityMethods;
 
@@ -27,18 +29,20 @@ public class Tiralabra {
      */
     public static void main(String[] args) throws IOException {
         
-        Path p = Paths.get("./helsinki.txt");
+//        Path p = Paths.get("./helsinki.txt");
+//        
+//        List<String> contents = Files.readAllLines(p);
+//        
+//        int[][] test = new int[][]{
+//            {2, 3},
+//            {4, 5}   
+//        };
         
-        List<String> contents = Files.readAllLines(p);
-        
-        int[][] test = new int[][]{
-            {2, 3},
-            {4, 5}   
-        };
-        
-        System.out.println(Arrays.deepToString(test));
-        Graph G = new AdjacencyMatrixGraph(UtilityMethods.fromStringListToint2DArray(contents));
-        contents.forEach(System.out::println);
+       // System.out.println(Arrays.deepToString(TestGraph.c));
+        Graph G = new AdjacencyMatrixGraph(TestGraph.c);
+        BellmanHeldKarp BHK = new BellmanHeldKarp();
+        System.out.println(BHK.solveTSP(G));
+//        contents.forEach(System.out::println);
    
     }
     

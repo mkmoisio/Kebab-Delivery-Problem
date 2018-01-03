@@ -21,15 +21,24 @@ public class AdjacencyMatrixGraph implements Graph {
 
     private final int[][] adjacencyMatrix;
     private int[][] path;
-
+    private  int nodeCount;
     /**
      * Luo graafin matriisiesityksen annetusta
      * @param matrix
      */
     public AdjacencyMatrixGraph(int[][] matrix) {
         this.adjacencyMatrix = matrix;
+        this.nodeCount = matrix.length;
+    }
+    
+    public int getSize() {
+        return this.adjacencyMatrix.length;
     }
 
+    @Override
+    public int getNodeCount() {
+        return this.nodeCount;
+    }
     /**
      * Laskee mikä on tämän graafin sellainen lyhin polku, joka käy parametrina annotuissa solmuissa ja palaa lähtösolmuun.
      * Lähtösolmu on parametrinä annettavan taulukon ensimmäinen alkio.
@@ -123,5 +132,10 @@ public class AdjacencyMatrixGraph implements Graph {
 //    public int[][] getAdjacencyMatrix() {
 //        return adjacencyMatrix;
 //    }
+
+    @Override
+    public int cost(int x, int y) {
+        return this.adjacencyMatrix[x][y];
+    }
 
 }

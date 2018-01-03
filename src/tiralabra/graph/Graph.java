@@ -11,7 +11,8 @@ package tiralabra.graph;
  */
 public interface Graph {
 
-  //  Graph constructSignificantGraph(int[] significantVertice);
-    
-  //  int[][] getAdjacencyMatrix();
+
+     int cost(int x, int y);
+      int getNodeCount();
+       public int getSize();
 }
