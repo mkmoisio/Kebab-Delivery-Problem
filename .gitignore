@@ -1,4 +1,5 @@
-build/*
+build*
 nbproject*
 /dist/
 .gradle
+gradle/wapper
