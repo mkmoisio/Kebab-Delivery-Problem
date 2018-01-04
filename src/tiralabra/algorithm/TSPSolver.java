@@ -12,7 +12,7 @@ import tiralabra.graph.utils.Result;
  *
  * @author mikkomo
  */
-public interface BellmanHeldKarp {
+public interface TSPSolver {
     
   //   public int solveTSP(Graph G);
      

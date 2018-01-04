@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tiralabra.graph.matrix;
+package tiralabra.graph.implementations;
 
 import tiralabra.graph.Graph;
 
@@ -14,16 +14,22 @@ import tiralabra.graph.Graph;
 public class AdjacencyMatrix implements Graph {
 
     private final int[][] adjacencyMatrix;
-    private int[][] path;
     private final int nodeCount;
+    private final String[] nodeNames;
 
     /**
      *
      * @param matrix
+     * @param names
      */
-    public AdjacencyMatrix(int[][] matrix) {
+    public AdjacencyMatrix(int[][] matrix, String[] names) {
         this.adjacencyMatrix = matrix;
         this.nodeCount = matrix.length;
+        this.nodeNames = names;
+    }
+
+    public AdjacencyMatrix(int[][] matrix) {
+        this(matrix, null);
     }
 
     @Override
@@ -54,9 +60,9 @@ public class AdjacencyMatrix implements Graph {
 //    }
 
     /*
-//     Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
-//     Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut voidaan konstruoida myöhemmin
-//     */
+     //     Laskee kaikki lyhimmät etäisyydet Floud-Warshallin algoritmilla ja palauttaa tuloksen 2-D matriisina.
+     //     Lisäksi päivittää path-fieldiin polkua niin, että tarvittavat polut voidaan konstruoida myöhemmin
+     //     */
 //    private int[][] allShortestPathsBetweenTwoVerticesAsMatrix() {
 //        int[][] dist = ArrayCopy.clone2DArray(this.adjacencyMatrix);
 //        this.path = new int[dist.length][dist.length];
@@ -89,7 +95,6 @@ public class AdjacencyMatrix implements Graph {
 //
 //        return Math.min(a, b + c);
 //    }
-
     // @Override
 //    public int[][] getAdjacencyMatrix() {
 //        return adjacencyMatrix;
@@ -97,6 +102,10 @@ public class AdjacencyMatrix implements Graph {
     @Override
     public int cost(int x, int y) {
         return this.adjacencyMatrix[x][y];
+    }
+
+    public String[] getNodeNames() {
+        return nodeNames;
     }
 
 }

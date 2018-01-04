@@ -6,18 +6,11 @@
 package tiralabra;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
 import tiralabra.algorithm.BellmanHeldKarpRecursion;
 import tiralabra.graph.Graph;
-import tiralabra.graph.Node;
 import tiralabra.graph.maps.TestGraphs;
-import tiralabra.graph.matrix.AdjacencyMatrix;
+import tiralabra.graph.implementations.AdjacencyMatrix;
 import tiralabra.graph.utils.Result;
-import tiralabra.graph.utils.UtilityMethods;
 
 /**
  *
@@ -32,7 +25,7 @@ public class Tiralabra {
     public static void main(String[] args) throws IOException {
 
 
-        Graph G = new AdjacencyMatrix(TestGraphs.c);
+        Graph G = new AdjacencyMatrix(TestGraphs.belgium, TestGraphs.belgiumNames);
         BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
         Result result = BHK.solveTSPpath(G);
         

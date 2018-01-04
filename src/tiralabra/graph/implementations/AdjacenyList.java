@@ -1,5 +1,5 @@
 
-package tiralabra.graph.list;
+package tiralabra.graph.implementations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +19,7 @@ public class AdjacenyList implements Graph {
     private Map<Integer, List<Integer>> map;
 
     public AdjacenyList(int[][] matrix) {
-
+        
     }
 
     @Override
@@ -34,6 +34,11 @@ public class AdjacenyList implements Graph {
 
     @Override
     public int getSize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String[] getNodeNames() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

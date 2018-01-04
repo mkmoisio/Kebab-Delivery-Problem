@@ -16,4 +16,7 @@ public interface Graph {
     int getNodeCount();
 
     public int getSize();
+
+    public String[] getNodeNames();
+    
 }

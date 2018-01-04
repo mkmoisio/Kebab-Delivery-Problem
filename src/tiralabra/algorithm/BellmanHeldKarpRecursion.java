@@ -12,52 +12,36 @@ import tiralabra.graph.utils.Result;
  *
  * @author mikkomo
  */
-public class BellmanHeldKarpRecursion implements BellmanHeldKarp {
+public class BellmanHeldKarpRecursion implements TSPSolver {
 
-    Graph G;
+    Graph graph;
     private int curMin;
 
-//    /**
-//     * Solves the TSP for the given Graph. Only returns the distance of the
-//     * shortest path.
-//     *
-//     * @param G
-//     * @return
-//     */
-//    @Override
-//    public int solveTSP(Graph G) {
-//        this.G = G;
-//        Set set = new Set();
-//        for (int i = 1; i < G.getSize(); i++) {
-//            set.add(i);
-//        }
-//        this.curMin = -1;
-//        this.minPathV(0, 0, set);
-//        return this.curMin;
-//    }
+
     /**
      * Solves the TSP for the given Graph. Returns a Result object containing
      * data related to running the algorithm.
      *
-     * @param G
+     * @param graph
      * @return Result
      */
     @Override
-    public Result solveTSPpath(Graph G) {
+    public Result solveTSPpath(Graph graph) {
 
         Result result = new Result();
         result.setAlgorithm("BellmanHeldKarp with Recursion");
-        this.G = G;
+        this.graph = graph;
 
         Set set = new Set();
-        for (int i = 1; i < G.getSize(); i++) {
+        for (int i = 1; i < graph.getSize(); i++) {
             set.add(i);
         }
         this.curMin = -1;
-        result.setNodeCount(set.getSize() + 1);
+      
         result.start();
         Node startingNode = this.minPath(0, 0, set);
         result.end();
+        result.setGraph(this.graph);
         result.setStartNode(startingNode);
         result.setShortestPathLength(this.curMin);
         return result;
@@ -77,14 +61,14 @@ public class BellmanHeldKarpRecursion implements BellmanHeldKarp {
 //        }
 //
 //        if (set.isEmpty()) {
-//            this.curMin = Maths.min(this.curMin, cCost + G.cost(i, 0));
-//            return G.cost(i, 0);
+//            this.curMin = Maths.min(this.curMin, cCost + graph.cost(i, 0));
+//            return graph.cost(i, 0);
 //
 //        } else {
 //            int min = -1;
 //
 //            for (int j : set.asArray()) {
-//                min = Maths.min(min, G.cost(i, j) + minPath(cCost + G.cost(i, j), j, set.remove(j)));
+//                min = Maths.min(min, graph.cost(i, j) + minPath(cCost + graph.cost(i, j), j, set.remove(j)));
 //
 //            }
 //            return min;
@@ -98,7 +82,7 @@ public class BellmanHeldKarpRecursion implements BellmanHeldKarp {
         }
 
         if (set.isEmpty()) {
-            int thisPath = curCost + G.cost(i, 0);
+            int thisPath = curCost + graph.cost(i, 0);
             if (this.curMin == Maths.min(curMin, thisPath)) {
                 return null;
             } else {
@@ -113,7 +97,7 @@ public class BellmanHeldKarpRecursion implements BellmanHeldKarp {
         } else {
             Node n = null;
             for (int j : set.asArray()) {
-                Node tmpNode = minPath(curCost + G.cost(i, j), j, set.remove(j));
+                Node tmpNode = minPath(curCost + graph.cost(i, j), j, set.remove(j));
                 if (tmpNode != null) {
                     n = tmpNode;
                 }
