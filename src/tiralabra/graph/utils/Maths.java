@@ -11,8 +11,12 @@ package tiralabra.graph.utils;
  */
 public class Maths {
 
-    /*
+    /**
      Min(a, (b+c)), negatiiviset arvot = +inf
+     * @param a
+     * @param b
+     * @param c
+     * @return 
      */
     public static int minDist(int a, int b, int c) {
         if (b < 0 || c < 0) {
@@ -25,7 +29,12 @@ public class Maths {
 
         return Math.min(a, b + c);
     }
-    
+    /**
+    Min(a, b), negatiiviset arvot = +inf
+     * @param a
+     * @param b
+     * @return 
+    */
     public static int min(int a, int b) {
         if (a < 0) return b;
         if (b < 0) return a;

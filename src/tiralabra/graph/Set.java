@@ -64,6 +64,11 @@ public class Set {
         this.size--;
     }
 
+    /**
+     * 
+     * @param i poistettava alkio
+     * @return uusi Set joka on vastaava kuin vanha, mutta ilman poistettua alkiota
+     */
     public Set remove(int i) {
         
         Set tmpSet = new Set(this.asArray(), this.size);

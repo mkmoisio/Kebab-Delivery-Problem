@@ -6,7 +6,7 @@
 package tiralabra.algorithm;
 
 import tiralabra.graph.Graph;
-import tiralabra.graph.Node;
+import tiralabra.graph.utils.Result;
 
 /**
  *
@@ -14,7 +14,7 @@ import tiralabra.graph.Node;
  */
 public interface BellmanHeldKarp {
     
-     public int solveTSP(Graph G);
+  //   public int solveTSP(Graph G);
      
-     public Node solveTSPpath(Graph G);
+     public Result solveTSPpath(Graph G);
 }

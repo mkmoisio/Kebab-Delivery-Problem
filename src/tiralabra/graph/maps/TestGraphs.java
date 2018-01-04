@@ -9,7 +9,7 @@ package tiralabra.graph.maps;
  *
  * @author mikkomo
  */
-public class TestGraph {
+public class TestGraphs {
 
     public static int[][] a = new int[][]{
         {0, 3, 2, 4, 3},

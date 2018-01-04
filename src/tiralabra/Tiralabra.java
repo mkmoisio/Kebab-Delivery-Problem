@@ -14,8 +14,9 @@ import java.util.List;
 import tiralabra.algorithm.BellmanHeldKarpRecursion;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
-import tiralabra.graph.maps.TestGraph;
+import tiralabra.graph.maps.TestGraphs;
 import tiralabra.graph.matrix.AdjacencyMatrix;
+import tiralabra.graph.utils.Result;
 import tiralabra.graph.utils.UtilityMethods;
 
 /**
@@ -30,28 +31,12 @@ public class Tiralabra {
      */
     public static void main(String[] args) throws IOException {
 
-//        Path p = Paths.get("./helsinki.txt");
-//        
-//        List<String> contents = Files.readAllLines(p);
-//        
-//        int[][] test = new int[][]{
-//            {2, 3},
-//            {4, 5}   
-//        };
-        // System.out.println(Arrays.deepToString(TestGraph.c));
-        Graph G = new AdjacencyMatrix(TestGraph.c);
-        long l = System.currentTimeMillis();
-        BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
-        Node n = BHK.solveTSPpath(G);
-        System.out.println(System.currentTimeMillis() - l + " ms");
-        System.out.println("Length of shortest path: " + n.getFullPathLen());
-        System.out.println("The path: ");
-        while (n != null) {
-            System.out.print(n.getValue() + " ");
-            n = n.getNxt();
-        }
-//        contents.forEach(System.out::println);
 
+        Graph G = new AdjacencyMatrix(TestGraphs.c);
+        BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
+        Result result = BHK.solveTSPpath(G);
+        
+        System.out.println(result.toString());
     }
 
 }
