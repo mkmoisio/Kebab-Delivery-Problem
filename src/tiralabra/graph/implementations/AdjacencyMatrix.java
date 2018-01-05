@@ -14,7 +14,6 @@ import tiralabra.graph.Graph;
 public class AdjacencyMatrix implements Graph {
 
     private final int[][] adjacencyMatrix;
-    private final int nodeCount;
     private final String[] nodeNames;
 
     /**
@@ -24,7 +23,6 @@ public class AdjacencyMatrix implements Graph {
      */
     public AdjacencyMatrix(int[][] matrix, String[] names) {
         this.adjacencyMatrix = matrix;
-        this.nodeCount = matrix.length;
         this.nodeNames = names;
     }
 
@@ -36,11 +34,7 @@ public class AdjacencyMatrix implements Graph {
     public int getSize() {
         return this.adjacencyMatrix.length;
     }
-
-    @Override
-    public int getNodeCount() {
-        return this.nodeCount;
-    }
+    
 
 //    private int[][] constructSignificantGraph(int[] significantVertice) {
 //
@@ -95,15 +89,16 @@ public class AdjacencyMatrix implements Graph {
 //
 //        return Math.min(a, b + c);
 //    }
-    // @Override
-//    public int[][] getAdjacencyMatrix() {
-//        return adjacencyMatrix;
-//    }
+     @Override
+    public int[][] getAdjacencyMatrix() {
+        return adjacencyMatrix;
+    }
     @Override
     public int cost(int x, int y) {
         return this.adjacencyMatrix[x][y];
     }
 
+    @Override
     public String[] getNodeNames() {
         return nodeNames;
     }

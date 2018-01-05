@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tiralabra.algorithm;
 
-import tiralabra.graph.utils.ArrayCopy;
+import tiralabra.graph.Graph;
+import tiralabra.graph.implementations.PathAdjacencyMatrix;
 import tiralabra.graph.utils.Maths;
 
 /**
@@ -14,30 +10,39 @@ import tiralabra.graph.utils.Maths;
  */
 public class FloydWarshall {
 
-    
     /**
-     * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan palautettavan taulukon [i][j][0] tasoon.
-     * [i][j][1] tasoon tallennetaan lyhin polku.(KESKEN)
-     * @param adjMatrix
-     * @return 
+     * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan
+     * palautettavan taulukon [i][j][0] tasoon. [i][j][1] tasoon tallennetaan
+     * lyhin polku.(KESKEN)
+     *
+     * @param graph
+     * @return
      */
-    public int[][][] allShortestPathsBetweenTwoVerticesAsMatrix(int[][] adjMatrix) {
+    public PathAdjacencyMatrix allShortestPaths(Graph graph) {
 
-        int[][][] dist = ArrayCopy.clone2DArrayTo3D(adjMatrix);
+        int[][] dist = graph.getAdjacencyMatrix();
+        int[][] path = new int[graph.getSize()][graph.getSize()];
+
+        for (int i = 0; i < dist.length; i++) {
+            for (int j = 0; j < dist.length; j++) {
+                path[i][j] = j;
+            }
+        }
 
         for (int k = 0; k < dist.length; k++) {
             for (int i = 0; i < dist.length; i++) {
                 for (int j = 0; j < dist.length; j++) {
 
-                    int before = dist[i][j][0];
-                    dist[i][j][0] = Maths.minDist(dist[i][j][0], dist[i][k][0], dist[k][j][0]);
-                    if (dist[i][j][0] != before) {
-                        dist[i][j][1] = dist[i][k][0];
+                    int before = dist[i][j];
+                    dist[i][j] = Maths.minDist(dist[i][j], dist[i][k], dist[k][j]);
+                    if (dist[i][j] != before) {
+                        path[i][j] = dist[i][k];
                     }
                 }
             }
         }
-        return dist;
+        return new PathAdjacencyMatrix(dist, path);
+
     }
 
 }

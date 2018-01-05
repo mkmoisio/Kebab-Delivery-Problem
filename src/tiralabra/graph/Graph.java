@@ -13,10 +13,9 @@ public interface Graph {
 
     int cost(int x, int y);
 
-    int getNodeCount();
-
     public int getSize();
 
     public String[] getNodeNames();
     
+    public int[][] getAdjacencyMatrix();
 }

@@ -23,41 +23,40 @@ import tiralabra.graph.utils.Result;
  * @author mikkomo
  */
 public class BellmanHeldKarpRecursionTest {
-     TSPSolver solver;
-    
+
+    TSPSolver solver;
+
     public BellmanHeldKarpRecursionTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
-        
-   this.   solver  = new BellmanHeldKarpRecursion();
+
+        this.solver = new BellmanHeldKarpRecursion();
     }
-    
+
     @Test
     public void testGraphCCorrectResult() {
         Graph G = new AdjacencyMatrix(TestGraphs.c);
         Result result = this.solver.solveTSPpath(G);
         assertEquals(result.getShortestPathLength(), 21);
     }
-    
-    
+
     @Test
     public void testGraphBelgiumCorrectResult() {
         Graph G = new AdjacencyMatrix(TestGraphs.belgium);
         Result result = this.solver.solveTSPpath(G);
         assertEquals(result.getShortestPathLength(), 253);
     }
-    
-    
+
     @After
     public void tearDown() {
     }
