@@ -38,6 +38,10 @@ public class TwoLevelAdjacencyMatrix implements Graph {
 
     @Override
     public int[][] getAdjacencyMatrix() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.matrix.getAdjacencyMatrix();
+    }
+    
+    public int[][] GetOriginalNodeNumber() {
+        return this.originalNodeNumber;
     }
 }

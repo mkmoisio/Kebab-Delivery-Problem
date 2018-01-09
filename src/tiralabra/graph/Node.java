@@ -5,20 +5,22 @@
  */
 package tiralabra.graph;
 
-import java.util.Set;
-
 /**
  *
  * @author mikkomo
  */
 public class Node {
 
-   private Node prev;
-   private Node next;
-   private int value;
+    private Node prev;
+    private Node next;
+    private int value;
+    private String name;
+    private boolean isRequired;
 
     public Node(int value) {
         this.value = value;
+        this.isRequired = false;
+        this.name = "unnamed";
     }
 
     public Node getPrev() {
@@ -44,6 +46,22 @@ public class Node {
     public void setValue(int value) {
         this.value = value;
     }
-    
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRequired() {
+        this.isRequired = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Node [" + this.getValue() + "] " + this.getName() + " " + this.isRequired;
+    }
+
 }

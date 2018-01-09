@@ -39,12 +39,32 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
         this.curMin = -1;
       
         result.start();
-        Node startingNode = this.minPath(0, 0, set);
+        Node startingNode = this.minPath(0, 0, set, 0);
         result.end();
         result.setGraph(this.graph);
         result.setStartNode(startingNode);
         result.setShortestPathLength(this.curMin);
         return result;
+    }
+    
+     
+    public Node solveTSPpathS(Graph graph, int[] pointsToVisit) {
+
+        Result result = new Result();
+        result.setAlgorithm("BellmanHeldKarp with Recursion");
+        this.graph = graph;
+
+        Set set = new Set(pointsToVisit);
+      
+        this.curMin = -1;
+      
+        result.start();
+        Node startingNode = this.minPath(pointsToVisit[0], pointsToVisit[0], set, pointsToVisit[0]);
+        result.end();
+        result.setGraph(this.graph);
+        result.setStartNode(startingNode);
+        result.setShortestPathLength(this.curMin);
+        return startingNode;
     }
 
 //    /**
@@ -76,18 +96,25 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
 //
 //    }
 //
-    private Node minPath(int curCost, int i, Set set) {
+    /**
+     * 
+     * @param curCost Current cumulative cost of the path
+     * @param i Destination point
+     * @param set A set of points to visit
+     * @return 
+     */
+    private Node minPath(int curCost, int i, Set set, int end) {
         if (Maths.min(curCost, curMin) == curMin) {
             return null;
         }
 
         if (set.isEmpty()) {
-            int thisPath = curCost + graph.cost(i, 0);
+            int thisPath = curCost + graph.cost(i, end);
             if (this.curMin == Maths.min(curMin, thisPath)) {
                 return null;
             } else {
                 this.curMin = thisPath;
-                Node lastNode = new Node(0);
+                Node lastNode = new Node(end);
 
                 Node secondLast = new Node(i);
                 secondLast.setNext(lastNode);
@@ -97,7 +124,7 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
         } else {
             Node n = null;
             for (int j : set.asArray()) {
-                Node tmpNode = minPath(curCost + graph.cost(i, j), j, set.remove(j));
+                Node tmpNode = minPath(curCost + graph.cost(i, j), j, set.remove(j), end);
                 if (tmpNode != null) {
                     n = tmpNode;
                 }

@@ -11,7 +11,7 @@ package tiralabra.graph;
  */
 public class Set {
 
-    private  int INC_SIZE = 10;
+    private  int INC_SIZE = 20;
     private final int INIT_SIZE = 10;
     private int[] array;
     private int size;
@@ -26,6 +26,10 @@ public class Set {
         this.array = array;
     }
 
+    public Set(int[] array) {
+        this(array, array.length);
+    }
+    
     public void add(int i) {
         if (this.size == array.length) {
             this.inc();

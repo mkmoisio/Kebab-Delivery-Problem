@@ -5,6 +5,8 @@
  */
 package tiralabra.graph.utils;
 
+import java.util.ArrayList;
+import java.util.List;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 
@@ -19,6 +21,7 @@ public class Result {
     private Node startNode;
     private String algorithm;
     private Graph graph;
+    private List<Result> subResults;
 
     public void start() {
         this.runningTimeMs = System.currentTimeMillis();
@@ -34,32 +37,33 @@ public class Result {
 
         sb.append("Algorithm used: ").append(this.algorithm).append("\n");
         sb.append("Running time: ").append(this.runningTimeMs).append(" ms \n");
-        sb.append("Graph size: ").append(this.graph.getSize()).append("\n");
-        sb.append("Shortest path length: ").append(this.shortestPathLength).append("\n");
-        sb.append("The shortest path is: ");
+    //    sb.append("The shortest path is: ");
         Node node = this.startNode;
-        String[] names = this.graph.getNodeNames();
 
         while (node != null) {
-            if (names != null) {
-                sb.append(names[node.getValue()]);
-            } else {
-                sb.append(node.getValue());
-
-            }
+            sb.append(node.toString());
+            sb.append("\n");
             node = node.getNext();
-
-            if (node != null) {
-                sb.append("-");
-            }
-
         }
-        sb.append("\n");
+
+//        if (this.subResults != null) {
+//            for (Result r : this.subResults) {
+//                sb.append(r.toString());
+//            }
+//        }
+
         return sb.toString();
     }
 
     public void setShortestPathLength(int shortestPathLength) {
         this.shortestPathLength = shortestPathLength;
+    }
+
+    public void addSubResult(Result result) {
+        if (this.subResults == null) {
+            this.subResults = new ArrayList();
+        }
+        this.subResults.add(result);
     }
 
     public void setStartNode(Node startNode) {

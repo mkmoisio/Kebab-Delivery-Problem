@@ -6,7 +6,6 @@
 package tiralabra.algorithm;
 
 import tiralabra.graph.Graph;
-import tiralabra.graph.implementations.PathAdjacencyMatrix;
 import tiralabra.graph.implementations.TwoLevelAdjacencyMatrix;
 
 /**
@@ -15,23 +14,23 @@ import tiralabra.graph.implementations.TwoLevelAdjacencyMatrix;
  */
 public class GraphCons {
 
-    public  static Graph constructSignificantGraph(Graph origGraph, int[] significantVertice) {
+    public static TwoLevelAdjacencyMatrix constructSignificantGraph(Graph inputGraph, int[] significantVertice) {
 
-        int[][] dist = origGraph.getAdjacencyMatrix();
-        int[][] sigMatrix = new int[significantVertice.length][significantVertice.length];
+        int[][] dist = inputGraph.getAdjacencyMatrix();
+        int[][] significantGraph = new int[significantVertice.length][significantVertice.length];
         int[][] originalNodeNumbers = new int[significantVertice.length][significantVertice.length];
 
         for (int i = 0; i < significantVertice.length; i++) {
             for (int j = 0; j < significantVertice.length; j++) {
                 if (i == j) {
-                    sigMatrix[i][j] = -1;
+                    significantGraph[i][j] = -1;
                 } else {
-                    sigMatrix[i][j] = dist[significantVertice[i]][significantVertice[j]];
-
+                    significantGraph[i][j] = dist[significantVertice[i]][significantVertice[j]];
+                    originalNodeNumbers[i][j] = significantVertice[i];
                 }
             }
         }
-        return new TwoLevelAdjacencyMatrix(sigMatrix, originalNodeNumbers);
+        return new TwoLevelAdjacencyMatrix(significantGraph, originalNodeNumbers);
     }
 
 }

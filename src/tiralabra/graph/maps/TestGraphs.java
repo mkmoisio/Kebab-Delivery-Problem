@@ -76,4 +76,11 @@ public class TestGraphs {
         "epen"
     };
 
+    public static int[][] simple = new int[][]{
+        {0, 1, 5, -1},
+        {1, 0, 5, 5},
+        {5, 5, 0, 5},
+        {-1, 1, 1, 0}
+    };
+
 }
