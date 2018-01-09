@@ -59,7 +59,8 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
         this.curMin = -1;
       
         result.start();
-        Node startingNode = this.minPath(pointsToVisit[0], pointsToVisit[0], set, pointsToVisit[0]);
+        Node startingNode = this.minPath(0, pointsToVisit[0], set.remove(pointsToVisit[0]), pointsToVisit[0]);
+      // System.out.println(this.curMin);
         result.end();
         result.setGraph(this.graph);
         result.setStartNode(startingNode);

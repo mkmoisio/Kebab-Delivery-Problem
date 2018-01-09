@@ -16,11 +16,11 @@ public class FloydWarshall {
 
     /**
      * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan
-     * palautettavan taulukon [i][j][0] tasoon. [i][j][1] tasoon tallennetaan
-     * lyhin polku.(KESKEN)
+     * palautettavaan graafiin. Lisäksi sisältää tiedon lyhimmän polun
+     * edeltävistä solmuista polkujen uudelleenkonstruoimiseksi.
      *
      * @param graph
-     * @return
+     * @return 
      */
     public PathAdjacencyMatrix allShortestPaths(Graph graph) {
 
@@ -64,19 +64,20 @@ public class FloydWarshall {
         }
 
         Node endNode = node.getNext();
-        int startValue = node.getValue();
-        int endValue = node.getNext().getValue();
-        int v = graph.getPath(startValue, endValue);
-        while (v != endValue) {
+    
+        int end = endNode.getValue();
+        
+        int next = graph.getPath(node.getValue(), end);
+        while (next != end) {
 
-            Node newNode = new Node(v);
-            System.out.println("asd");
+            Node newNode = new Node(next);
+            newNode.setName("FW reconstruction");
             node.setNext(newNode);
             node = node.getNext();
-            v = graph.getPath(v, endValue);
+            next = graph.getPath(next, end);
         }
         node.setNext(endNode);
-        endNode.setPrev(node);
+     //   endNode.setPrev(node);
         return endNode;
     }
 

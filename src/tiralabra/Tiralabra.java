@@ -9,12 +9,10 @@ import java.io.IOException;
 import tiralabra.algorithm.BellmanHeldKarpRecursion;
 import tiralabra.algorithm.DeliveryPathSolver;
 import tiralabra.algorithm.FloydWarshall;
-import tiralabra.algorithm.GraphCons;
 import tiralabra.graph.Graph;
 import tiralabra.graph.maps.TestGraphs;
 import tiralabra.graph.implementations.AdjacencyMatrix;
 import tiralabra.graph.implementations.PathAdjacencyMatrix;
-import tiralabra.graph.implementations.TwoLevelAdjacencyMatrix;
 import tiralabra.graph.utils.Result;
 import tiralabra.graph.utils.UtilityMethods;
 
