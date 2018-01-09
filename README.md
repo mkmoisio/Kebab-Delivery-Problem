@@ -7,3 +7,5 @@
 [Viikkoraportti 2](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Viikkoraportti-2.md)
 
 [Viikkoraportti 3](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Viikkoraportti-3.md)
+
+[Viikkoraportti 4](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Viikkoraportti-4.md)
