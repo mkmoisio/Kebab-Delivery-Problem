@@ -15,7 +15,9 @@ public interface Graph {
 
     public int getSize();
 
-    public String[] getNodeNames();
+    public String[] getNames();
+    
+    public String getName(int i);
     
     public int[][] getAdjacencyMatrix();
 }

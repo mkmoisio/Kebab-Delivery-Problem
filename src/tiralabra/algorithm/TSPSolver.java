@@ -6,7 +6,7 @@
 package tiralabra.algorithm;
 
 import tiralabra.graph.Graph;
-import tiralabra.graph.utils.Result;
+import tiralabra.graph.utils.PathResult;
 
 /**
  *
@@ -16,5 +16,5 @@ public interface TSPSolver {
     
   //   public int solveTSP(Graph G);
      
-     public Result solveTSPpath(Graph G);
+     public PathResult solveTSPpath(Graph G);
 }

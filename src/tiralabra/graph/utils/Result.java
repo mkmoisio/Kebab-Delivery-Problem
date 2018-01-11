@@ -7,14 +7,13 @@ package tiralabra.graph.utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 
 /**
  *
  * @author mikkomo
  */
-public class Result {
+public abstract class Result {
 
     private long runningTimeMs;
     private int shortestPathLength;
@@ -22,10 +21,7 @@ public class Result {
     private String algorithm;
     private List<Result> subResults;
 
-    
-    public Result(String algorithm) {
-        this.algorithm = algorithm;
-    }
+
     public void start() {
         this.runningTimeMs = System.currentTimeMillis();
     }
@@ -35,47 +31,13 @@ public class Result {
     }
 
     @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Algorithm: ").append(this.algorithm).append("\n");
-        sb.append("Running time: ").append(this.runningTimeMs).append(" ms \n");
-    //    sb.append("The shortest path is: ");
-        Node node = this.startNode;
-
-        while (node != null) {
-            sb.append(node.toString());
-            sb.append("\n");
-            node = node.getNext();
-        }
-
-        if (this.subResults != null) {
-            for (Result r : this.subResults) {
-                sb.append(r.toString());
-            }
-        }
-
-        return sb.toString();
-    }
-
-    public void setShortestPathLength(int shortestPathLength) {
-        this.shortestPathLength = shortestPathLength;
-    }
+    public abstract String toString();
 
     public void addSubResult(Result result) {
         if (this.subResults == null) {
             this.subResults = new ArrayList();
         }
         this.subResults.add(result);
-    }
-
-    
-    public void setStartNode(Node startNode) {
-        this.startNode = startNode;
-    }
-
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
     }
 
     public int getShortestPathLength() {
@@ -86,6 +48,34 @@ public class Result {
         return startNode;
     }
 
-    
+    public Result(String algorithm) {
+        this.algorithm = algorithm;
+    }
 
+    public void setShortestPathLength(int shortestPathLength) {
+        this.shortestPathLength = shortestPathLength;
+    }
+
+    public void setStartNode(Node startNode) {
+        this.startNode = startNode;
+    }
+
+    public void setAlgorithm(String algorithm) {
+        this.algorithm = algorithm;
+    }
+
+    public long getRunningTimeMs() {
+        return runningTimeMs;
+    }
+
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
+    public List<Result> getSubResults() {
+        return subResults;
+    }
+
+    
+    
 }

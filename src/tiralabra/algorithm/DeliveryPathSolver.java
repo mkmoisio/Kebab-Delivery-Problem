@@ -8,7 +8,8 @@ package tiralabra.algorithm;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 import tiralabra.graph.implementations.PathAdjacencyMatrix;
-import tiralabra.graph.utils.Result;
+import tiralabra.graph.utils.AlgorithmResult;
+import tiralabra.graph.utils.PathResult;
 
 /**
  *
@@ -26,13 +27,13 @@ public class DeliveryPathSolver {
 
     ;   
     
-    public Result solvePath(Graph graph, int[] pointsToVisit) {
-        Result result = new Result("Delivery Path Solver");
+    public PathResult solvePath(Graph graph, int[] pointsToVisit) {
+        PathResult result = new PathResult("Delivery Path Solver");
         result.start();
 
         PathAdjacencyMatrix shortestPaths = FWSolver.allShortestPaths(graph);
 
-        Result tspResult = this.TSPsolver.solveTSPpathS(shortestPaths, pointsToVisit);
+        AlgorithmResult tspResult = this.TSPsolver.solveTSPpathS(shortestPaths, pointsToVisit);
 
         Node node = tspResult.getStartNode();
 
@@ -40,6 +41,7 @@ public class DeliveryPathSolver {
 
         while (node != null) {
             node.setRequired();
+            node.setName(graph.getName(node.getValue()));
             node = FWSolver.reconstructPath(shortestPaths, node);
         }
         result.end();

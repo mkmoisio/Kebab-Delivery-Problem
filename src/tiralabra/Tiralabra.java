@@ -16,7 +16,7 @@ import tiralabra.graph.Graph;
 import tiralabra.graph.maps.TestGraphs;
 import tiralabra.graph.implementations.AdjacencyMatrix;
 import tiralabra.graph.implementations.PathAdjacencyMatrix;
-import tiralabra.graph.utils.Result;
+import tiralabra.graph.utils.PathResult;
 import tiralabra.graph.utils.UtilityMethods;
 
 /**
@@ -40,7 +40,7 @@ public class Tiralabra {
 //       UtilityMethods.print2DArray(shortestPaths.getAdjacencyMatrix());
 //        UtilityMethods.print2DArray(shortestPaths.getPaths());
         DeliveryPathSolver dps = new DeliveryPathSolver();
-        Result result = dps.solvePath(helsinki, new int[]{1, 12, 35});
+        PathResult result = dps.solvePath(helsinki, new int[]{107, 41});
         System.out.println(result.toString());
 //        Graph belgium = new AdjacencyMatrix(TestGraphs.belgium, TestGraphs.belgiumNames);
 //        FloydWarshall fw = new FloydWarshall();
@@ -49,16 +49,16 @@ public class Tiralabra {
 //
 //        TwoLevelAdjacencyMatrix signiGraph = GraphCons.constructSignificantGraph(shortestPaths, townsToVisit);
 //        BellmanHeldKarpRecursion BHK = new BellmanHeldKarpRecursion();
-//        Result result = BHK.solveTSPpath(signiGraph);
+//        PathResult result = BHK.solveTSPpath(signiGraph);
 //
 //        System.out.println(result.toString());
 //        Graph belgium = new AdjacencyMatrix(TestGraphs.belgium, TestGraphs.belgiumNames);
 //        DeliveryPathSolver dps = new DeliveryPathSolver();
 //        int[] pointsToVisit = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; // maastricht, heerlen, bonn
-//        Result result = dps.solvePath(belgium, pointsToVisit);
+//        PathResult result = dps.solvePath(belgium, pointsToVisit);
 //        Graph simple = new AdjacencyMatrix(TestGraphs.belgium, TestGraphs.belgiumNames);
 //        DeliveryPathSolver dps = new DeliveryPathSolver();
-//         Result result = dps.solvePath(simple, new int[]{1, 3});
+//         PathResult result = dps.solvePath(simple, new int[]{1, 3});
 //        System.out.println(result.toString());
 //        TwoLevelAdjacencyMatrix signiGraph = GraphCons.constructSignificantGraph(belgium, new int[]{1, 2, 4});
 //        UtilityMethods.print2DArray(signiGraph.getAdjacencyMatrix());

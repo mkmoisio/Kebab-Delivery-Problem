@@ -13,18 +13,17 @@ import tiralabra.graph.Graph;
  */
 public class PathAdjacencyMatrix implements Graph {
 
-    private AdjacencyMatrix matrix;
+    private AdjacencyMatrix adjMatrix;
     private int[][] paths;
 
-    public PathAdjacencyMatrix(int[][] matrix, int[][] paths) {
-        this.matrix = new AdjacencyMatrix(matrix);
+    public PathAdjacencyMatrix(int[][] matrix, int[][] paths, String[] names) {
+        this.adjMatrix = new AdjacencyMatrix(matrix, names);
         this.paths = paths;
     }
 
     public int getPath(int x, int y) {
         return this.paths[x][y];
     }
-    
 
     public int[][] getPaths() {
         return this.paths;
@@ -32,21 +31,26 @@ public class PathAdjacencyMatrix implements Graph {
 
     @Override
     public int cost(int x, int y) {
-        return this.matrix.cost(x, y);
+        return this.adjMatrix.cost(x, y);
     }
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.adjMatrix.getSize();
     }
 
     @Override
-    public String[] getNodeNames() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String[] getNames() {
+        return this.adjMatrix.getNames();
     }
 
     @Override
     public int[][] getAdjacencyMatrix() {
-        return this.matrix.getAdjacencyMatrix();
+        return this.adjMatrix.getAdjacencyMatrix();
+    }
+
+    @Override
+    public String getName(int i) {
+        return this.getNames()[i];
     }
 }

@@ -18,9 +18,13 @@ public class Node {
     private boolean isRequired;
 
     public Node(int value) {
+        this(value, "unnamed");
+    }
+
+    public Node(int value, String name) {
         this.value = value;
         this.isRequired = false;
-        this.name = "unnamed";
+        this.name = name;
     }
 
     public Node getPrev() {
@@ -61,7 +65,14 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node [" + this.getValue() + "] " + this.getName() + " " + this.isRequired;
+
+        String visit = "";
+        if (this.isRequired) {
+            visit = "Pysähdys!";
+        }
+
+        return this.getName() + "\t [" + this.getValue() + "] \t" + visit;
+
     }
 
 }

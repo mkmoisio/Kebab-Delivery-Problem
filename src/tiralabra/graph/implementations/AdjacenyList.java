@@ -1,14 +1,9 @@
 
 package tiralabra.graph.implementations;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import tiralabra.graph.Graph;
-import tiralabra.graph.Node;
-import static tiralabra.graph.utils.UtilityMethods.MAGIC_SEVENTY;
 
 /**
  *
@@ -35,12 +30,17 @@ public class AdjacenyList implements Graph {
     }
 
     @Override
-    public String[] getNodeNames() {
+    public String[] getNames() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public int[][] getAdjacencyMatrix() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getName(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

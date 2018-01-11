@@ -3,8 +3,9 @@ package tiralabra.algorithm;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 import tiralabra.graph.implementations.PathAdjacencyMatrix;
+import tiralabra.graph.utils.AlgorithmResult;
 import tiralabra.graph.utils.Maths;
-import tiralabra.graph.utils.Result;
+import tiralabra.graph.utils.PathResult;
 
 /**
  *
@@ -12,7 +13,7 @@ import tiralabra.graph.utils.Result;
  */
 public class FloydWarshall {
 
-    private Result result;
+    private AlgorithmResult result;
 
     /**
      * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan
@@ -24,7 +25,7 @@ public class FloydWarshall {
      */
     public PathAdjacencyMatrix allShortestPaths(Graph graph) {
 
-        this.result = new Result("Floyd-Warshall: Calculating all shortest paths");
+        this.result = new AlgorithmResult("Floyd-Warshall: Calculating all shortest paths");
         this.result.start();
 
         int[][] dist = graph.getAdjacencyMatrix();
@@ -50,11 +51,11 @@ public class FloydWarshall {
         }
 
         this.result.end();
-        return new PathAdjacencyMatrix(dist, path);
+        return new PathAdjacencyMatrix(dist, path, graph.getNames());
 
     }
 
-    public Result getResult() {
+    public AlgorithmResult getResult() {
         return this.result;
     }
 
@@ -79,7 +80,7 @@ public class FloydWarshall {
         
         while (next != end) {
 
-            Node newNode = new Node(next);
+            Node newNode = new Node(next, graph.getName(next));
           
             node.setNext(newNode);
             node = node.getNext();

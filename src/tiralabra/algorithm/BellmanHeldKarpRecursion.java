@@ -3,8 +3,9 @@ package tiralabra.algorithm;
 import tiralabra.graph.Graph;
 import tiralabra.graph.Node;
 import tiralabra.graph.Set;
+import tiralabra.graph.utils.AlgorithmResult;
 import tiralabra.graph.utils.Maths;
-import tiralabra.graph.utils.Result;
+import tiralabra.graph.utils.PathResult;
 
 /**
  * Recursive implementation of Bellman-Held-Karp algorithm as described in
@@ -19,16 +20,16 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
 
 
     /**
-     * Solves the TSP for the given Graph. Returns a Result object containing
-     * data related to running the algorithm.
+     * Solves the TSP for the given Graph. Returns a PathResult object containing
+ data related to running the algorithm.
      *
      * @param graph
-     * @return Result
+     * @return PathResult
      */
     @Override
-    public Result solveTSPpath(Graph graph) {
+    public PathResult solveTSPpath(Graph graph) {
 
-        Result result = new Result("BellmanHeldKarp with Recursion");
+        PathResult result = new PathResult("BellmanHeldKarp with Recursion");
         this.graph = graph;
 
         Set set = new Set();
@@ -46,9 +47,9 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
     }
     
      
-    public Result solveTSPpathS(Graph graph, int[] pointsToVisit) {
+    public AlgorithmResult solveTSPpathS(Graph graph, int[] pointsToVisit) {
 
-        Result result = new Result("BellmanHeldKarp with Recursion");
+        AlgorithmResult result = new AlgorithmResult("BellmanHeldKarp with Recursion");
         this.graph = graph;
 
         Set set = new Set(pointsToVisit);
