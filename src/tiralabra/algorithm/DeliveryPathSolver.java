@@ -22,24 +22,29 @@ public class DeliveryPathSolver {
     public DeliveryPathSolver() {
         TSPsolver = new BellmanHeldKarpRecursion();
         FWSolver = new FloydWarshall();
-    };   
+    }
+
+    ;   
     
     public Result solvePath(Graph graph, int[] pointsToVisit) {
-        Result result = new Result();
-        result.setAlgorithm("Delivery Path Solver");
+        Result result = new Result("Delivery Path Solver");
         result.start();
 
         PathAdjacencyMatrix shortestPaths = FWSolver.allShortestPaths(graph);
 
-        Node node = this.TSPsolver.solveTSPpathS(shortestPaths, pointsToVisit);
+        Result tspResult = this.TSPsolver.solveTSPpathS(shortestPaths, pointsToVisit);
+
+        Node node = tspResult.getStartNode();
+
         result.setStartNode(node);
-        
+
         while (node != null) {
             node.setRequired();
             node = FWSolver.reconstructPath(shortestPaths, node);
         }
         result.end();
-
+        result.addSubResult(FWSolver.getResult());
+        result.addSubResult(tspResult);
         return result;
     }
 

@@ -28,8 +28,7 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
     @Override
     public Result solveTSPpath(Graph graph) {
 
-        Result result = new Result();
-        result.setAlgorithm("BellmanHeldKarp with Recursion");
+        Result result = new Result("BellmanHeldKarp with Recursion");
         this.graph = graph;
 
         Set set = new Set();
@@ -41,17 +40,15 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
         result.start();
         Node startingNode = this.minPath(0, 0, set, 0);
         result.end();
-        result.setGraph(this.graph);
         result.setStartNode(startingNode);
         result.setShortestPathLength(this.curMin);
         return result;
     }
     
      
-    public Node solveTSPpathS(Graph graph, int[] pointsToVisit) {
+    public Result solveTSPpathS(Graph graph, int[] pointsToVisit) {
 
-        Result result = new Result();
-        result.setAlgorithm("BellmanHeldKarp with Recursion");
+        Result result = new Result("BellmanHeldKarp with Recursion");
         this.graph = graph;
 
         Set set = new Set(pointsToVisit);
@@ -62,41 +59,11 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
         Node startingNode = this.minPath(0, pointsToVisit[0], set.remove(pointsToVisit[0]), pointsToVisit[0]);
       // System.out.println(this.curMin);
         result.end();
-        result.setGraph(this.graph);
         result.setStartNode(startingNode);
         result.setShortestPathLength(this.curMin);
-        return startingNode;
+        return result;
     }
 
-//    /**
-//     *
-//     *
-//     * @param i dst
-//     * @param s Set on points to visit
-//     * @return minimum length from point 1 to point i that visits all points in
-//     * set s.
-//     */
-//    private int minPath(int cCost, int i, Set set) {
-//        if (Maths.min(cCost, curMin) == curMin) {
-//            return -1;
-//        }
-//
-//        if (set.isEmpty()) {
-//            this.curMin = Maths.min(this.curMin, cCost + graph.cost(i, 0));
-//            return graph.cost(i, 0);
-//
-//        } else {
-//            int min = -1;
-//
-//            for (int j : set.asArray()) {
-//                min = Maths.min(min, graph.cost(i, j) + minPath(cCost + graph.cost(i, j), j, set.remove(j)));
-//
-//            }
-//            return min;
-//        }
-//
-//    }
-//
     /**
      * 
      * @param curCost Current cumulative cost of the path

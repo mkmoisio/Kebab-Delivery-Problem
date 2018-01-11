@@ -7,6 +7,7 @@ package tiralabra.graph.utils;
 
 import java.util.Arrays;
 import java.util.List;
+import tiralabra.graph.implementations.AdjacencyMatrix;
 
 /**
  *
@@ -24,32 +25,39 @@ public class UtilityMethods {
      * @param list listaesitys verkosta
      * @return verkon vierusmatriisiesitys
      */
-    public static int[][] fromStringListToint2DArray(List<String> list) {
-        int[][] array2D = new int[MAGIC_SEVENTY][MAGIC_SEVENTY];
-       
+    public static AdjacencyMatrix adjacencyMatrixFromListOfStrings(List<String> list) {
+        int[][] array2D = new int[list.size()][list.size()];
+        String[] names = new String[list.size() +1];
+       // System.out.println(list.size());
         for (int[] array1D : array2D) {
             Arrays.fill(array1D, -1);
         }
         
-        list.forEach(item -> {
-            int[] tmp = new int[MAGIC_SEVENTY];
+     
+        list.forEach((String item) -> {
+            int[] tmp = new int[list.size()];
             Arrays.fill(tmp, -1);
+         //   System.out.println(item);
             String[] tmpString = item.split(":");
-            int nodeNumber = Integer.parseInt(tmpString[0]);    
             
-            for (int i = 1; i < tmpString.length; i += 2) {
+            int nodeNumber = Integer.parseInt(tmpString[0]);    
+            names[nodeNumber] = tmpString[1];
+            for (int i = 2; i < tmpString.length; i += 2) {
                 
                 tmp[Integer.parseInt(tmpString[i])] = Integer.parseInt(tmpString[i + 1]);
             }
-
             array2D[nodeNumber] = tmp;
-
+          
         });
         
-        for (int i = 0; i < MAGIC_SEVENTY; i++) {
+        
+        
+        for (int i = 0; i < list.size(); i++) {
             array2D[i][i] = 0;
         }
-        return array2D;
+        AdjacencyMatrix mtrx = new AdjacencyMatrix(array2D, names);
+        
+        return mtrx;
     }
     
     /**
@@ -58,6 +66,7 @@ public class UtilityMethods {
      */
     public static void print2DArray(int[][] array2D) {
         for (int i = 0; i < array2D[0].length; i++) {
+            System.out.print("[" + i + "]: ");
             System.out.println(Arrays.toString(array2D[i]));
         }
     }

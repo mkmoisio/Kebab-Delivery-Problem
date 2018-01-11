@@ -1,27 +1,108 @@
-0:36:20:41:18
-1:2:20:3:4
-2:1:20:4:20
-3:1:4:4:24:5:15
-4:2:20:3:24:6:10
-5:3:15:7:20:8:36
-6:4:10:7:15:16:20
-7:5:20:6:15:9:10:15:18
-8:5:36:10:10:13:9:17:26
-9:7:10:10:10:14:15
-10:8:10:9:10:12:15
-11:12:10:13:8:17:20:19:15
-12:10:15:11:10:14:10
-13:8:8:11:8
-14:9:15:12:10:15:8
-15:7:18:14:8:16:12:56:15
-16:6:20:15:12:55:20
-17:8:26:11:20:18:22:21:28
-18:17:22:20:20:21:12:38:25:39:16
-19:11:15:20:10
-20:18:20:19:10:40:27:52:27:53:15
-21:17:28:18:10
-38:18:25
-39:18:16
-52:40:25:53:14:
-53:20:15:52:14
-56:15:15
+0:Apollo:97:0
+1:Thirsty Scholar:43:174:42:151
+2:Black Door:44:58:6:31
+3:Public Corner:45:61:5:17:4:0
+4:Colorado:3:0:45:61:5:17
+5:On the Rocks:46:68:3:17:4:17
+6:Molly Malone’s:46:68:2:31
+7:Shot Bar:50:80:51:48:8:80
+8:Hemingway’s:50:0
+9:Sports Academy:58:0
+10:Pickwick Pub:58:0
+11:Lady Moon:58:0
+12:Old Hat:107:0
+13:Zetor:107:0
+14:Dubliner:107:0
+15:Virgin OilCo.:107:0
+16:O’Learys:56:0
+17:U.Kaleva:56:81:18:0:64:55
+18:Base:17:0:63:47:56:81
+19:LeBonk:63:0
+20:Bar Loose:70:0:21:0
+21:Iggy’s:70:0:20:0
+22:Los Cojones:72:22:77:83:
+23:The Riff:75:0
+24:Swengi:76:68:75:91
+25:Tommyknocker:76:38:26:0
+26:Bar Bronco 2:76:38:25:0:78:114
+27:Boothill:87:0
+28:Bar Bronco 3:87:0
+29:Milli Miglia:86:0
+30:Eerikin Kulma:85:0:
+31:Mendocino:85:0
+32:Bar 17:84:0
+33:Leijuva Lahna:82:0
+34:Memphis:67:107:97:80
+35:Steam Hellsinki:97:0
+36:Aussie Bar Kamppi:96:0
+37:Shaker:93:0
+38:Bar Bäkkäri:101:0
+39:Baarikärpänen:101:0
+40:Navy Jerry’s
+41:Pub Pete:104:0
+42:Yliopistokatu-Fabianinkatu:1:151:51:90:51:100
+43:Kaisaniemenkatu-(Metsätalo):1:174
+44:Kaisaniemenkatu-Vuorikatu:2:58
+45:Vilhonkatu-Mikonkatu:3:61:4:61:47:123
+46:Kaivokatu-Mikonkatu:50:97:6:68:5:68:4:61
+47:Vilhonkatu-Rautatientori:48:165:45:123
+48:Kaivokatu-Rautatientori:49:77:47:165:58:159
+49:Ateneuminkuja-Keskuskatu:55:92:48:77
+50:Ateneuminkuja-Mikonkatu:7:80:8:0:46:97:54:96
+51:Yliopistokatu-Vuorikatu:7:48:42:90:53:97
+52:Yliopistokatu-Fabianinkatu:42:100:53:106
+53:Aleksanterinkatu-Kluuvikatu:52:106:51:97:54:108
+54:Aleksanterinkatu-Mikonkatu:53:108:50:96:55:142
+55:Aleksanterinkatu-Keskuskatu:54:142:49:92:57:166:56:120:107:84
+56:Kolme seppää:16:0:17:81:18:81:55:120:57:132
+57:Mannerheimintie-Pohjoisesplanadi:55:166:56:132:62:127
+58:Kaivokatu-Asema-aukio:9:0:10:0:11:0:107:109:59:84:48:159:60:166
+59:Simonkatu-Mannerheimintie:107:93:58:84:60:123
+60:Postikatu-Mannerheimintie:61:86:59:123:58:166
+61:Arkadiankatu-Mannerheimintie:97:151:60:86:98:187
+62:Lönnrotinkatu-Yrjönkatu:57:127:63:102:73:140:71:160
+63:Kalevankatu-Yrjönkatu:19:0:62:102:64:45:70:162
+64:Yrjönkatu 23:63:45:17:55:65:55
+65:Yrjönkatu 25:64:55:66:26
+66:Eerikinkatu-Yrjönkatu:65:26:67:132:69:99
+67:Simonkatu-Yrjönkatu:34:107:66:132:68:96
+68:Kansakoulukatu-Annankatu:90:158:69:122:67:96
+69:Eerikinkatu-Annankatu:66:99:83:154:68:122
+70:Kalevankatu-Annankatu:20:0:21:0:63:162:71:106:82:154
+71:Lönnrotinkatu-Annankatu:70:106:72:139:81:157:62:160
+72:Bulevardi-Annankatu:22:22:71:139:73:155:80:155
+73:Bulevari-Yrjönkatu:62:140:72:155:74:102
+74:Uudenmaankatu-Yrjönkatu:73:102:75:129:77:158
+75:Iso-Roobertinkatu-Yrjönkatu:23:0:24:91:74:129
+76:Iso-Roobertinkatu-Annankatu:24:68:25:38:26:38:77:129
+77:Uudenmaankatu-Annankatu:22:83:74:158:76:129:79:159
+78:Iso-Roobertinkatu-Fredrikinkatu:26:114:79:131
+79:Uudenmaankatu-Fredrikinkatu:78:131:77:159:80:105
+80:Bulevardi-Fredrikinkatu:79:105:72:155:81:130:88:167
+81:Lönnrotinkatu-Fredrikinkatu:80:130:71:157:87:171
+82:Kalevankatu-Fredrikinkatu:33:0:83:73:87:107:86:168:70:154:90:114
+83:Eerikinkatu-Fredrikinkatu:84:80:82:73:69:154
+84:Eerikinkatu-Lapinlahdenkatu:32:0:86:92:83:80:92:109
+85:Eerikinkatu-Albertinkatu:30:0:31:0:86:75:84:92:92:83
+86:Kalevankatu-Albertinkatu:29:0:87:103:85:75:82:168
+87:Lönnrotinkatu-Albertinkatu:27:0:28:0:81:171:86:103:82:107:88:143
+88:Bulevardi-Albertinkatu:80:167:87:143
+89:Uudenmaankatu-Albertinkatu:88:90:79:123
+90:Kansakoulunkatu-Fredrikinkatu:91:86:82:114:68:158:93:188
+91:Kampintorin-liikenneympyrä:92:110:90:86:94:153:93:177
+92:Lapinlahden-puistikon liikenneympyrä:84:109:85:83:91:110
+93:McDonald’s Kamppi:37:0:91:177:90:188:94:92:95:81:101:131
+94:Salomonkatu-Runeberginkatu:91:153:93:92:102:139
+95:Salomonkatu-Jaakonkatu:93:81:96:81:100:123
+96:Salomonkatu-Antinkatu:36:0:95:81:97:77:99:123
+97:Salomonkatu-Olavinkatu:0:0:34:80:35:0:96:77:61:151:98:130
+98:Eteläinen-Rautatienkatu-Arkadiankatu:61:187:97:130:99:70:106:264
+99:Eteläinen-Rautatienkatu-Antinkatu:98:70:96:123:100:84
+100:Eteläinen-Rautatienkatu-Jaakonkatu:99:84:95:123:101:74
+101:Eteläinen-Rautatienkatu-Fredrikinkatu:38:0:39:0:100:74:93:131:102:120:106:142
+102:Eteläinen-Rautatienkatu-Runeberginkatu:101:120:94:139:103:76
+103:Runeberginkatu-Hietaniemenkatu:102:76:104:157:105:209
+104:Hietaniemenkatu-Lapuankatu:41:0:103:157:105:155
+105:Arkadiankatu-Lapuankatu:104:155:106:204:103:209
+106:Arkadiankatu-Fredrikinkatu:105:204:101:142:98:264
+107:Kaivopiha:12:0:13:0:14:0:15:0:55:84:59:93:58:109

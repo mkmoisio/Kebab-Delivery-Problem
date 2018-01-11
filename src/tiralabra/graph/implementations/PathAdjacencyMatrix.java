@@ -24,6 +24,7 @@ public class PathAdjacencyMatrix implements Graph {
     public int getPath(int x, int y) {
         return this.paths[x][y];
     }
+    
 
     public int[][] getPaths() {
         return this.paths;

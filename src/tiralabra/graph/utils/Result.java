@@ -20,9 +20,12 @@ public class Result {
     private int shortestPathLength;
     private Node startNode;
     private String algorithm;
-    private Graph graph;
     private List<Result> subResults;
 
+    
+    public Result(String algorithm) {
+        this.algorithm = algorithm;
+    }
     public void start() {
         this.runningTimeMs = System.currentTimeMillis();
     }
@@ -35,7 +38,7 @@ public class Result {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Algorithm used: ").append(this.algorithm).append("\n");
+        sb.append("Algorithm: ").append(this.algorithm).append("\n");
         sb.append("Running time: ").append(this.runningTimeMs).append(" ms \n");
     //    sb.append("The shortest path is: ");
         Node node = this.startNode;
@@ -46,11 +49,11 @@ public class Result {
             node = node.getNext();
         }
 
-//        if (this.subResults != null) {
-//            for (Result r : this.subResults) {
-//                sb.append(r.toString());
-//            }
-//        }
+        if (this.subResults != null) {
+            for (Result r : this.subResults) {
+                sb.append(r.toString());
+            }
+        }
 
         return sb.toString();
     }
@@ -66,6 +69,7 @@ public class Result {
         this.subResults.add(result);
     }
 
+    
     public void setStartNode(Node startNode) {
         this.startNode = startNode;
     }
@@ -78,8 +82,10 @@ public class Result {
         return shortestPathLength;
     }
 
-    public void setGraph(Graph graph) {
-        this.graph = graph;
+    public Node getStartNode() {
+        return startNode;
     }
+
+    
 
 }
