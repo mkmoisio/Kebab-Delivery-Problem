@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AdjacencyMatrix.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tiralabra</a> &gt; <a href="index.source.html" class="el_package">graph.implementations</a> &gt; <span class="el_source">AdjacencyMatrix.java</span></div><h1>AdjacencyMatrix.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package graph.implementations;
+
+import graph.Graph;
+
+/**
+ *
+ * @author mikkomo
+ */
+public class AdjacencyMatrix implements Graph {
+
+    private final int[][] adjacencyMatrix;
+    private final String[] nodeNames;
+
+    /**
+     *
+     * @param matrix
+     * @param names
+     */
+<span class="fc" id="L24">    public AdjacencyMatrix(int[][] matrix, String[] names) {</span>
+<span class="fc" id="L25">        this.adjacencyMatrix = matrix;</span>
+<span class="fc" id="L26">        this.nodeNames = names;</span>
+<span class="fc" id="L27">    }</span>
+
+    public AdjacencyMatrix(int[][] matrix) {
+<span class="fc" id="L30">        this(matrix, null);</span>
+<span class="fc" id="L31">    }</span>
+
+    @Override
+    public int getSize() {
+<span class="fc" id="L35">        return this.adjacencyMatrix.length;</span>
+    }
+
+    @Override
+    public int[][] getAdjacencyMatrix() {
+<span class="fc" id="L40">        return adjacencyMatrix;</span>
+    }
+
+    @Override
+    public int cost(int x, int y) {
+<span class="fc" id="L45">        return this.adjacencyMatrix[x][y];</span>
+    }
+
+    @Override
+    public String[] getNames() {
+<span class="fc" id="L50">        return nodeNames;</span>
+    }
+
+    @Override
+    public String getName(int i) {
+<span class="fc" id="L55">        return this.getNames()[i];</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

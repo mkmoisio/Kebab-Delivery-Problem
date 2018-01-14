@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Node.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tiralabra</a> &gt; <a href="index.source.html" class="el_package">graph</a> &gt; <span class="el_source">Node.java</span></div><h1>Node.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package graph;
+
+/**
+ *
+ * @author mikkomo
+ */
+public class Node {
+
+    private Node prev;
+    private Node next;
+    private int value;
+    private String name;
+    private boolean isRequired;
+
+    public Node(int value) {
+<span class="fc" id="L21">        this(value, &quot;unnamed&quot;);</span>
+<span class="fc" id="L22">    }</span>
+
+<span class="fc" id="L24">    public Node(int value, String name) {</span>
+<span class="fc" id="L25">        this.value = value;</span>
+<span class="fc" id="L26">        this.isRequired = false;</span>
+<span class="fc" id="L27">        this.name = name;</span>
+<span class="fc" id="L28">    }</span>
+
+    public Node getPrev() {
+<span class="nc" id="L31">        return prev;</span>
+    }
+
+    public void setPrev(Node prv) {
+<span class="nc" id="L35">        this.prev = prv;</span>
+<span class="nc" id="L36">    }</span>
+
+    public Node getNext() {
+<span class="fc" id="L39">        return next;</span>
+    }
+
+    public void setNext(Node next) {
+<span class="fc" id="L43">        this.next = next;</span>
+<span class="fc" id="L44">    }</span>
+
+    public int getValue() {
+<span class="fc" id="L47">        return value;</span>
+    }
+
+    public void setValue(int value) {
+<span class="nc" id="L51">        this.value = value;</span>
+<span class="nc" id="L52">    }</span>
+
+    public String getName() {
+<span class="fc" id="L55">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (name != null) </span>
+<span class="fc" id="L60">        this.name = name;</span>
+<span class="fc" id="L61">    }</span>
+
+    public void setRequired() {
+<span class="fc" id="L64">        this.isRequired = true;</span>
+<span class="fc" id="L65">    }</span>
+
+    @Override
+    public String toString() {
+
+<span class="fc" id="L70">        String visit = &quot;&quot;;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (this.isRequired) {</span>
+<span class="fc" id="L72">            visit = &quot;* &quot;;</span>
+        }
+
+<span class="fc" id="L75">        return visit + &quot;[&quot; + this.getValue() + &quot;] &quot; + this.getName() + &quot; &quot; +visit;</span>
+
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>

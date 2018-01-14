@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Maths.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tiralabra</a> &gt; <a href="index.source.html" class="el_package">other</a> &gt; <span class="el_source">Maths.java</span></div><h1>Maths.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package other;
+
+/**
+ *
+ * @author mikkomo
+ */
+<span class="nc" id="L12">public class Maths {</span>
+
+    /**
+     * Min(a, (b+c)), negatiiviset arvot = +inf
+     *
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
+    public static int minDist(int a, int b, int c) {
+
+<span class="fc bfc" id="L24" title="All 6 branches covered.">        if (a &lt; 0 &amp;&amp; b &lt; 0 &amp;&amp; c &lt; 0) {</span>
+<span class="fc" id="L25">            return -1;</span>
+        }
+<span class="fc bfc" id="L27" title="All 4 branches covered.">        if (b &lt; 0 || c &lt; 0) {</span>
+<span class="fc" id="L28">            return a;</span>
+
+        }
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (a &lt; 0) {</span>
+<span class="fc" id="L32">            return b + c;</span>
+        }
+
+<span class="fc" id="L35">        int d = b + c;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (a &gt; d) {</span>
+<span class="fc" id="L37">            return d;</span>
+        } else {
+<span class="fc" id="L39">            return a;</span>
+        }
+    }
+
+    /**
+     * Min(a, b), negatiiviset arvot = +inf
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static int min(int a, int b) {
+        
+<span class="fc bfc" id="L52" title="All 4 branches covered.">        if (a &lt; 0 &amp;&amp; b &lt; 0)</span>
+<span class="fc" id="L53">            return -1;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (a &lt; 0) {</span>
+<span class="fc" id="L55">            return b;</span>
+        }
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (b &lt; 0) {</span>
+<span class="fc" id="L58">            return a;</span>
+        }
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (a &lt; b) {</span>
+<span class="fc" id="L61">            return a;</span>
+        } else {
+<span class="fc" id="L63">            return b;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.8.201612092310</span></div></body></html>
