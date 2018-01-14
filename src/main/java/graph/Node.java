@@ -56,6 +56,7 @@ public class Node {
     }
 
     public void setName(String name) {
+        if (name != null) 
         this.name = name;
     }
 
@@ -71,7 +72,7 @@ public class Node {
             visit = "* ";
         }
 
-        return visit + "[" + this.getValue() + "] " + this.getName() + visit;
+        return visit + "[" + this.getValue() + "] " + this.getName() + " " +visit;
 
     }
 

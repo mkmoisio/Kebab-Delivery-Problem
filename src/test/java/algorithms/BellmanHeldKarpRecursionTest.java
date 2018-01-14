@@ -55,6 +55,8 @@ public class BellmanHeldKarpRecursionTest {
         Graph G = new AdjacencyMatrix(TestGraphs.belgium);
         AlgorithmResult result = this.solver.solveTSPpath(G);
         assertEquals(result.getShortestPathLength(), 253);
+        
+       
     }
 
     @After
