@@ -1,3 +1,5 @@
+### Toteutus
+
 Ohjelma käyttää sopivasti koodattua Helsingin keskustan karttaa, joka sisältää 41 baaria, sekä noin 65 kadunkulmaa. Karttapohjana olen käyttänyt Limes ry:n vuoden 2017 approkarttaa (https://appro.limes.fi/restaurants.html).
 
 Ohjelma laskee lyhimmät polut Floyd-Warshallin algoritmilla ja tallentaa polun rekonstruktontia varten polun edelliset solmut omaan taulukkoonsa. Floyd-Warshallin algoritmin toteutus on hyvin pitkälti sovellus Wikipediassa esitettystä pseudokoodista (https://en.wikipedia.org/wiki/Floyd–Warshall_algorithm#Path_reconstruction).
