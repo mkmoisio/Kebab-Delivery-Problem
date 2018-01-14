@@ -1,6 +1,6 @@
-### Viikko 6
+### Viikko 5
 
-Viikolla kuusi työ on edennyt jotakuinkin seuraavasti:
+Viikolla viisi työ on edennyt jotakuinkin seuraavasti:
 - Limes ry:n approkartta mallinettu luettavaan tekstitiedostoon
 - Luotu sopiva testimatriisi, josta on tiedossa mitkä ovat lyhimmät polut ja TSP:n ratkaisu
 - Ylimääräistä koodia siivottu
