@@ -1,8 +1,8 @@
 0:Apollo:97:0
 1:Thirsty Scholar:43:174:42:151
 2:Black Door:44:58:6:31
-3:Public Corner:45:61:5:17:4:0
-4:Colorado:3:0:45:61:5:17
+3:Public Corner:47:61:5:17:4:0
+4:Colorado:3:0:47:61:5:17
 5:On the Rocks:46:68:3:17:4:17
 6:Molly Malone’s:46:68:2:31
 7:Shot Bar:50:80:51:48:8:80
@@ -38,14 +38,14 @@
 37:Shaker:93:0
 38:Bar Bäkkäri:101:0
 39:Baarikärpänen:101:0
-40:Navy Jerry’s
+40:Navy Jerry’s:103:1
 41:Pub Pete:104:0
 42:Yliopistokatu-Fabianinkatu:1:151:51:90:51:100
-43:Kaisaniemenkatu-(Metsätalo):1:174
+43:Kaisaniemenkatu (Metsätalo):1:174:44:175:45:248
 44:Kaisaniemenkatu-Vuorikatu:2:58
-45:Vilhonkatu-Mikonkatu:3:61:4:61:47:123
+45:Vilhonkatu-Mikonkatu:46:130:47:123:43:248
 46:Kaivokatu-Mikonkatu:50:97:6:68:5:68:4:61
-47:Vilhonkatu-Rautatientori:48:165:45:123
+47:Vilhonkatu-Rautatientori:3:61:4:61:48:165:45:123
 48:Kaivokatu-Rautatientori:49:77:47:165:58:159
 49:Ateneuminkuja-Keskuskatu:55:92:48:77
 50:Ateneuminkuja-Mikonkatu:7:80:8:0:46:97:54:96
@@ -101,8 +101,8 @@
 100:Eteläinen-Rautatienkatu-Jaakonkatu:99:84:95:123:101:74
 101:Eteläinen-Rautatienkatu-Fredrikinkatu:38:0:39:0:100:74:93:131:102:120:106:142
 102:Eteläinen-Rautatienkatu-Runeberginkatu:101:120:94:139:103:76
-103:Runeberginkatu-Hietaniemenkatu:102:76:104:157:105:209
+103:Runeberginkatu-Hietaniemenkatu:102:76:104:157:105:209:40:1
 104:Hietaniemenkatu-Lapuankatu:41:0:103:157:105:155
 105:Arkadiankatu-Lapuankatu:104:155:106:204:103:209
 106:Arkadiankatu-Fredrikinkatu:105:204:101:142:98:264
-107:Kaivopiha:12:0:13:0:14:0:15:0:55:84:59:93:58:109
+107:Kaivopiha:12:0:13:0:14:0:15:0:56:84:59:93:58:109
