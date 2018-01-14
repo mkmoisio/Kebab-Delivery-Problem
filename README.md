@@ -4,7 +4,7 @@
 
 [Toteutusdokumentti](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Toteutusdokumentti.md)
 
-[Testausdokumentti](https://github.com/mkmoisio/Kebab-Delivery-Problem/edit/master/doc/Testausdokumentti.md)
+[Testausdokumentti](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Testausdokumentti.md)
 
 [Viikkoraportti 1](https://github.com/mkmoisio/Kebab-Delivery-Problem/blob/master/doc/Viikkoraportti-1.md)
 
