@@ -11,6 +11,14 @@ package other;
  */
 public class TestGraphs {
 
+ // Unit test graph:
+// Lyhin polku nollasta alkaen joka käy kaikissa solmuissa on
+// luonnollisesti 0 - 4 - 3 - 1 - 3 - 4 - 2 - 4 - 0
+//    {0}---3---{4}---7---{1}
+//               |   \      |
+//               4     2    1
+//               |       \  |
+//              {2}        {3}
     public static int[][] unitTestGraph = new int[][]{
         {0, -1, -1, -1, 3},
         {-1, 0, -1, 1, 7},

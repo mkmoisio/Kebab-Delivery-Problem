@@ -48,7 +48,7 @@ public class PathSolverTest {
     }
 
     @Test
-    public void correctOutPutWithTestGraph() {
+    public void correctOutputWithTestGraph() {
 
         int[] tmp = new int[]{0, 1, 2, 3, 4};
         PathResult result = this.solver.solvePath(this.graph, tmp);
