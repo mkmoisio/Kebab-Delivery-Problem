@@ -21,12 +21,14 @@ public class PathSolver {
     }
 
     /**
-     * Ratkaisee koko sen lyhimmän polun joka täytyy kulkea, jotta kaikki annetut solmut tulevat käydyiksi. 
+     * Ratkaisee koko sen lyhimmän polun joka täytyy kulkea, jotta kaikki
+     * annetut solmut tulevat käydyiksi siten, että polku päättyy
+     * lähtöpisteeseen.
+     *
      * @param graph
      * @param pointsToVisit
-     * @return 
+     * @return
      */
-    
     public PathResult solvePath(Graph graph, int[] pointsToVisit) {
         PathResult result = new PathResult("Path Solver");
         result.start();
@@ -50,6 +52,5 @@ public class PathSolver {
         result.addSubResult(tspResult);
         return result;
     }
-
 
 }

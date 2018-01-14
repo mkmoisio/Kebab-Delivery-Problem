@@ -9,11 +9,11 @@ import graph.Graph;
  *
  * @author mikkomo
  */
-public class AdjacenyList implements Graph {
+public class AdjacencyList implements Graph {
 
     private Map<Integer, List<Integer>> map;
 
-    public AdjacenyList(int[][] matrix) {
+    public AdjacencyList(int[][] matrix) {
         
     }
 

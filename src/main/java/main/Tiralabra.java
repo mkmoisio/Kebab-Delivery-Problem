@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 import java.io.IOException;
@@ -24,7 +19,9 @@ public class Tiralabra {
      */
     public static void main(String[] args) throws IOException {
 
-        
+        /**
+         * Map from https://appro.limes.fi/restaurants.html
+         */
         Application application = new Application("./helsinki.txt");
         application.execute();
     }
