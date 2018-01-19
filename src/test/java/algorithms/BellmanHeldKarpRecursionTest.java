@@ -16,7 +16,7 @@ import algorithm.TSPSolver;
 import graph.Graph;
 import other.TestGraphs;
 import graph.implementations.AdjacencyMatrix;
-import graph.utils.AlgorithmResult;
+import graph.utils.TSPResult;
 
 /**
  *
@@ -46,14 +46,14 @@ public class BellmanHeldKarpRecursionTest {
     @Test
     public void testGraphCCorrectResult() {
         Graph G = new AdjacencyMatrix(TestGraphs.c);
-        AlgorithmResult result = this.solver.solveTSPpath(G);
+        TSPResult result = this.solver.solveTSPpath(G);
         assertEquals(result.getShortestPathLength(), 21);
     }
 
     @Test
     public void testGraphBelgiumCorrectResult() {
         Graph G = new AdjacencyMatrix(TestGraphs.belgium);
-        AlgorithmResult result = this.solver.solveTSPpath(G);
+        TSPResult result = this.solver.solveTSPpath(G);
         assertEquals(result.getShortestPathLength(), 253);
         
        

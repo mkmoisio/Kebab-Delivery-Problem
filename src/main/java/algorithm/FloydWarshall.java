@@ -3,8 +3,8 @@ package algorithm;
 import graph.Graph;
 import graph.Node;
 import graph.implementations.PathAdjacencyMatrix;
-import graph.utils.AlgorithmResult;
 import graph.utils.ArrayCopy;
+import graph.utils.FloydWarshallResult;
 import other.Maths;
 
 /**
@@ -15,8 +15,6 @@ import other.Maths;
  */
 public class FloydWarshall {
 
-    private AlgorithmResult result;
-
     /**
      * Laskee kaikkien solmujen väliset lyhimmät etäisyyden, jotka tallenntetaan
      * palautettavaan graafiin. Lisäksi sisältää tiedon lyhimmän polun
@@ -25,10 +23,10 @@ public class FloydWarshall {
      * @param graph
      * @return
      */
-    public PathAdjacencyMatrix allShortestPaths(Graph graph) {
+    public FloydWarshallResult allShortestPaths(Graph graph) {
 
-        this.result = new AlgorithmResult("Floyd-Warshall: all shortest paths");
-        this.result.start();
+        FloydWarshallResult result = new FloydWarshallResult("Floyd-Warshall: all shortest paths");
+        result.start();
 
         int[][] dist = ArrayCopy.clone2DArray(graph.getAdjacencyMatrix());
 
@@ -53,13 +51,11 @@ public class FloydWarshall {
             }
         }
 
-        this.result.end();
-        return new PathAdjacencyMatrix(dist, path, graph.getNames());
+        result.end();
 
-    }
+        result.setMatrix(new PathAdjacencyMatrix(dist, path, graph.getNames()));
+        return result;
 
-    public AlgorithmResult getResult() {
-        return this.result;
     }
 
     /**

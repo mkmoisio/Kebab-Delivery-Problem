@@ -2,8 +2,8 @@ package algorithm;
 
 import graph.Graph;
 import graph.Node;
-import graph.implementations.PathAdjacencyMatrix;
-import graph.utils.AlgorithmResult;
+import graph.utils.FloydWarshallResult;
+import graph.utils.TSPResult;
 import graph.utils.PathResult;
 
 /**
@@ -33,23 +33,23 @@ public class PathSolver {
         PathResult result = new PathResult("Path Solver");
         result.start();
 
-        PathAdjacencyMatrix shortestPaths = FWSolver.allShortestPaths(graph);
+        FloydWarshallResult fwr = FWSolver.allShortestPaths(graph);
 
-        AlgorithmResult tspResult = this.TSPsolver.solveTSPpath(shortestPaths, pointsToVisit);
+        TSPResult tsp = this.TSPsolver.solveTSPpath(fwr.getMatrix(), pointsToVisit);
 
-        Node node = tspResult.getStartNode();
+        Node node = tsp.getStartNode();
 
         result.setStartNode(node);
 
         while (node != null) {
             node.setRequired();
             node.setName(graph.getName(node.getValue()));
-            node = FWSolver.reconstructPath(shortestPaths, node);
+            node = FWSolver.reconstructPath(fwr.getMatrix(), node);
         }
         result.end();
-        result.setShortestPathLength(tspResult.getShortestPathLength());
-        result.addSubResult(FWSolver.getResult());
-        result.addSubResult(tspResult);
+        result.setShortestPathLength(tsp.getShortestPathLength());
+        result.addSubResult(fwr);
+        result.addSubResult(tsp);
         return result;
     }
 

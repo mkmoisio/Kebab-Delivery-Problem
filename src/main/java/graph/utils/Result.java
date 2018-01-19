@@ -16,9 +16,7 @@ import graph.Node;
 public abstract class Result {
 
     private long runningTimeMs;
-    private int shortestPathLength;
-    private Node startNode;
-    private String algorithm;
+    private final String operation;
     private List<Result> subResults;
 
 
@@ -40,36 +38,17 @@ public abstract class Result {
         this.subResults.add(result);
     }
 
-    public int getShortestPathLength() {
-        return shortestPathLength;
-    }
-
-    public Node getStartNode() {
-        return startNode;
-    }
-
     public Result(String algorithm) {
-        this.algorithm = algorithm;
+        this.operation = algorithm;
     }
 
-    public void setShortestPathLength(int shortestPathLength) {
-        this.shortestPathLength = shortestPathLength;
-    }
-
-    public void setStartNode(Node startNode) {
-        this.startNode = startNode;
-    }
-
-    public void setAlgorithm(String algorithm) {
-        this.algorithm = algorithm;
-    }
 
     public long getRunningTimeMs() {
         return runningTimeMs;
     }
 
     public String getAlgorithm() {
-        return algorithm;
+        return operation;
     }
 
     public List<Result> getSubResults() {

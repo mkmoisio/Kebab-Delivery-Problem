@@ -13,8 +13,27 @@ import graph.Node;
  */
 public class PathResult extends Result {
 
+    private Node startNode;
+    private int shortestPathLength;
+
     public PathResult(String algorithm) {
         super(algorithm);
+    }
+
+    public int getShortestPathLength() {
+        return shortestPathLength;
+    }
+
+    public void setShortestPathLength(int shortestPathLength) {
+        this.shortestPathLength = shortestPathLength;
+    }
+
+    public void setStartNode(Node startNode) {
+        this.startNode = startNode;
+    }
+
+    public Node getStartNode() {
+        return startNode;
     }
 
     @Override
@@ -24,14 +43,14 @@ public class PathResult extends Result {
         sb.append("Algorithm: ").append(super.getAlgorithm()).append("\n");
         sb.append("Running time: ").append(super.getRunningTimeMs()).append(" ms \n");
         sb.append("The shortest path is: \n");
-        Node node = super.getStartNode();
+        Node node = this.getStartNode();
 
         while (node != null) {
             sb.append(node.toString());
             sb.append("\n");
             node = node.getNext();
         }
-        sb.append(super.getShortestPathLength()).append(" meters.\n");
+        sb.append(this.getShortestPathLength()).append(" meters.\n");
 
         if (super.getSubResults() != null) {
             for (Result r : super.getSubResults()) {

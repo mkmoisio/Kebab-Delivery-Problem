@@ -52,7 +52,7 @@ public class PathSolverTest {
 
         int[] tmp = new int[]{0, 1, 2, 3, 4};
         PathResult result = this.solver.solvePath(this.graph, tmp);
-        System.out.println(result.toString());
+       // System.out.println(result.toString());
 
         assertTrue(result.toString().contains("* [0] 0 * \n"
                 + "[4] 4 \n"

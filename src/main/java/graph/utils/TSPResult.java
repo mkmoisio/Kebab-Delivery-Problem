@@ -4,9 +4,9 @@ package graph.utils;
  *
  * @author mikkomo
  */
-public class AlgorithmResult extends Result {
+public class TSPResult extends PathResult {
 
-    public AlgorithmResult(String algorithm) {
+    public TSPResult(String algorithm) {
         super(algorithm);
     }
 

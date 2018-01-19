@@ -3,7 +3,7 @@ package algorithm;
 import graph.Graph;
 import graph.Node;
 import graph.utils.Set;
-import graph.utils.AlgorithmResult;
+import graph.utils.TSPResult;
 import other.Maths;
 
 /**
@@ -26,7 +26,7 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
      * @return PathResult
      */
     @Override
-    public AlgorithmResult solveTSPpath(Graph graph) {
+    public TSPResult solveTSPpath(Graph graph) {
 
         int[] pointsToVisit = new int[graph.getSize()];
 
@@ -47,9 +47,9 @@ public class BellmanHeldKarpRecursion implements TSPSolver {
      * @return PathResult
      */
     @Override
-    public AlgorithmResult solveTSPpath(Graph graph, int[] pointsToVisit) {
+    public TSPResult solveTSPpath(Graph graph, int[] pointsToVisit) {
 
-        AlgorithmResult result = new AlgorithmResult("BellmanHeldKarp with Recursion");
+        TSPResult result = new TSPResult("BellmanHeldKarp with Recursion");
         this.graph = graph;
 
         Set set = new Set(pointsToVisit);

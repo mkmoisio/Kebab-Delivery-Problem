@@ -6,7 +6,7 @@
 package algorithm;
 
 import graph.Graph;
-import graph.utils.AlgorithmResult;
+import graph.utils.TSPResult;
 
 /**
  *
@@ -16,7 +16,7 @@ public interface TSPSolver {
     
   //   public int solveTSP(Graph G);
      
-     public AlgorithmResult solveTSPpath(Graph graph, int[] pointsToVisit);
+     public TSPResult solveTSPpath(Graph graph, int[] pointsToVisit);
      
-     public AlgorithmResult solveTSPpath(Graph graph);
+     public TSPResult solveTSPpath(Graph graph);
 }

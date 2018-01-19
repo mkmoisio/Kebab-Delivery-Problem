@@ -50,7 +50,7 @@ public class FloydWarshallTest {
     
     @Test
    public void allShortestPathsCorrectlyCalculated() {
-     Graph newGraph = fw.allShortestPaths(this.graph);
+     Graph newGraph = fw.allShortestPaths(this.graph).getMatrix();
      int[][] newAdjMatrix = newGraph.getAdjacencyMatrix();
      for (int i = 0; i < newAdjMatrix.length; i++) {
          assertTrue(Arrays.equals(newAdjMatrix[i], TestGraphs.unitTestGraphAllShortestPaths[i]));
